@@ -247,7 +247,7 @@ bar {
                 focused_workspace           #160021   #160021   #E5FF00
                 active_workspace            #160021   #160021   #f8f8f2
                 inactive_workspace          #001621   #001621   #808B90
-                urgent_workspace            #ff5555   #ff5555   #f8f8f2
+                urgent_workspace            #FF0062   #FF0062   #f8f8f2
         }
 }
 
