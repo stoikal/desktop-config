@@ -44,6 +44,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Right click on title bar to toggle floating mode
+bindsym --border button3 floating toggle
+bindsym --whole-window Ctrl+button3 floating toggle
+
+# Middle click on title bar to close window
+bindsym --border button2 kill
+bindsym --whole-window Ctrl+button2 kill
+
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+t exec gnome-terminal
