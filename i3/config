@@ -65,6 +65,9 @@ bindsym $mod+t exec gnome-terminal
 # start firefox
 bindsym $mod+f exec firefox
 
+# start firefox in private mode
+bindsym $mod+Shift+f exec firefox --private-window
+
 # open task manager (like Ctrl+Shift+Esc in Windows)
 bindsym Ctrl+Shift+Escape exec gnome-system-monitor
 
