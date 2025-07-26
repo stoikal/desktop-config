@@ -37,6 +37,9 @@ exec --no-startup-id nm-applet
 # Start picom for window effects (rounded corners, transparency, etc.)
 exec_always --no-startup-id pkill picom; picom --experimental-backends
 
+# Set wallpaper using feh (change the path to your wallpaper)
+exec_always --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/set-wallpaper.sh random
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -64,6 +67,12 @@ bindsym $mod+f exec firefox
 
 # open task manager (like Ctrl+Shift+Esc in Windows)
 bindsym Ctrl+Shift+Escape exec gnome-system-monitor
+
+# change wallpaper randomly from wallpapers directory
+bindsym $mod+Shift+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/set-wallpaper.sh random
+
+# browse and select wallpaper using rofi
+bindsym $mod+Ctrl+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/set-wallpaper.sh browse
 
 # restart picom manually
 bindsym $mod+Ctrl+p exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/start-picom.sh
