@@ -59,6 +59,9 @@ bindsym $mod+t exec gnome-terminal
 # start firefox
 bindsym $mod+f exec firefox
 
+# open task manager (like Ctrl+Shift+Esc in Windows)
+bindsym Ctrl+Shift+Escape exec gnome-system-monitor
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -258,6 +261,7 @@ client.background       #282a36
 # floating pop up automatically
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [class="Gnome-system-monitor"] floating enable
 
 
 # Screenshots
