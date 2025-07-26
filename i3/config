@@ -233,6 +233,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# enable focus follow mouse;
+focus_follows_mouse yes
+
 # Remove window borders
 default_border none
 default_floating_border none
