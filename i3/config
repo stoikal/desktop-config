@@ -287,11 +287,11 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 
 
-# Screenshots
+# Screenshots (with picom handling to prevent blur issues)
 # https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date).png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date).png"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date).png"
+bindsym Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/screenshot.sh full
+bindsym $mod+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/screenshot.sh window
+bindsym Shift+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/screenshot.sh select
 
 
 # rename workspace
