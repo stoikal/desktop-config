@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/xlwp/Projects/personal/desktop-config/scripts/i3lock-xss-wrapper.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/xlwp/Projects/personal/desktop-config/bin/i3lock-xss-wrapper.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -38,7 +38,7 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id pkill picom; picom --experimental-backends
 
 # Set wallpaper using feh (change the path to your wallpaper)
-exec_always --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/set-wallpaper.sh random
+exec_always --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh random
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -76,13 +76,13 @@ bindsym $mod+Shift+e exec nemo
 bindsym Ctrl+Shift+Escape exec gnome-system-monitor
 
 # change wallpaper randomly from wallpapers directory
-bindsym $mod+Shift+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/set-wallpaper.sh random
+bindsym $mod+Shift+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh random
 
 # browse and select wallpaper using rofi
-bindsym $mod+Ctrl+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/set-wallpaper.sh browse
+bindsym $mod+Ctrl+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh browse
 
 # restart picom manually
-bindsym $mod+Ctrl+p exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/start-picom.sh
+bindsym $mod+Ctrl+p exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/start-picom.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,10 +207,10 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/i3lock-enhanced.sh image, mode "default"
+    bindsym l exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/i3lock-enhanced.sh image, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/i3lock-enhanced.sh image && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/i3lock-enhanced.sh image && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/i3lock-enhanced.sh image && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/i3lock-enhanced.sh image && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -296,9 +296,9 @@ for_window [class="Gnome-system-monitor"] floating enable
 
 # Screenshots (with picom handling to prevent blur issues)
 # https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
-bindsym Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/screenshot.sh full
-bindsym $mod+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/screenshot.sh window
-bindsym Shift+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/screenshot.sh select
+bindsym Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh full
+bindsym $mod+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh window
+bindsym Shift+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh select
 
 
 # rename workspace
