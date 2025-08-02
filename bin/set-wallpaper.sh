@@ -10,7 +10,7 @@ mkdir -p "$WALLPAPER_DIR"
 # Function to set a specific wallpaper
 set_wallpaper() {
     if [ -f "$1" ]; then
-        feh --bg-scale "$1"
+        feh --bg-fill "$1"
         echo "Wallpaper set to: $1"
     else
         echo "Error: Wallpaper file not found: $1"
@@ -28,7 +28,7 @@ set_random_wallpaper() {
     fi
     
     # Set random wallpaper
-    feh --bg-scale --randomize "$WALLPAPER_DIR"/*
+    feh --bg-fill --randomize "$WALLPAPER_DIR"/*
     echo "Random wallpaper set from $WALLPAPER_DIR"
 }
 
