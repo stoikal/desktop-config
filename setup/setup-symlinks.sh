@@ -90,19 +90,19 @@ echo
 
 # i3 window manager configuration
 create_symlink \
-    "$CONFIG_ROOT/i3/config" \
+    "$CONFIG_ROOT/config/i3/config" \
     "$HOME/.config/i3/config" \
     "i3 window manager configuration"
 
 # i3status configuration
 create_symlink \
-    "$CONFIG_ROOT/i3status/config" \
+    "$CONFIG_ROOT/config/i3status/config" \
     "$HOME/.config/i3status/config" \
     "i3status bar configuration"
 
 # Picom compositor configuration
 create_symlink \
-    "$CONFIG_ROOT/picom/picom.conf" \
+    "$CONFIG_ROOT/config/picom/picom.conf" \
     "$HOME/.config/picom/picom.conf" \
     "Picom compositor configuration"
 
@@ -113,7 +113,7 @@ echo -e "${BLUE}=== Script Management ===${NC}"
 
 # Make all scripts executable
 echo -e "${YELLOW}Making scripts executable...${NC}"
-find "$CONFIG_ROOT/scripts" -name "*.sh" -type f -exec chmod +x {} \;
+find "$CONFIG_ROOT/bin" -name "*.sh" -type f -exec chmod +x {} \;
 echo -e "${GREEN}✓ All scripts are now executable${NC}"
 echo
 
@@ -126,8 +126,8 @@ echo
 echo -e "${YELLOW}Next steps:${NC}"
 echo "1. Reload i3 configuration: Super+Shift+C"
 echo "2. Restart i3: Super+Shift+R (or logout/login)"
-echo "3. Test wallpaper script: $CONFIG_ROOT/scripts/set-wallpaper.sh random"
-echo "4. Test screenshot script: $CONFIG_ROOT/scripts/screenshot.sh select"
+echo "3. Test wallpaper script: $CONFIG_ROOT/bin/set-wallpaper.sh random"
+echo "4. Test screenshot script: $CONFIG_ROOT/bin/screenshot.sh select"
 echo
 echo -e "${BLUE}Note: Your original config files have been backed up with timestamps${NC}"
 echo -e "${BLUE}Configuration changes in this repository will now automatically apply to your system${NC}"
