@@ -106,6 +106,12 @@ create_symlink \
     "$HOME/.config/picom/picom.conf" \
     "Picom compositor configuration"
 
+# Ranger file manager configuration
+create_symlink \
+    "$CONFIG_ROOT/config/ranger/rc.conf" \
+    "$HOME/.config/ranger/rc.conf" \
+    "Ranger file manager configuration"
+
 # Setup VS Code settings
 setup_vscode_settings
 
@@ -121,6 +127,7 @@ echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"
 echo -e "${GREEN}✓ i3status configuration symlinked${NC}"
 echo -e "${GREEN}✓ Picom configuration symlinked${NC}"
+echo -e "${GREEN}✓ Ranger configuration symlinked${NC}"
 echo -e "${GREEN}✓ Scripts made executable${NC}"
 echo
 echo -e "${YELLOW}Next steps:${NC}"

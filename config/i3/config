@@ -68,6 +68,12 @@ bindsym $mod+f exec firefox
 # start firefox in private mode
 bindsym $mod+Shift+f exec firefox --private-window
 
+# start VS Code
+bindsym $mod+c exec code
+
+# start default browser
+bindsym $mod+b exec xdg-open about:blank
+
 # start file managers
 bindsym $mod+e exec gnome-terminal -e ranger
 bindsym $mod+Shift+e exec nemo
