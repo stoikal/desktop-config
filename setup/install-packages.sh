@@ -16,7 +16,8 @@ PACKAGES=(
     picom
     feh
     scrot
-    ranger
+    maim
+    xdotool
 )
 
 echo -e "${YELLOW}Updating package list...${NC}"
