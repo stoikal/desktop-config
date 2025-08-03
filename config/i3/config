@@ -200,6 +200,7 @@ workspace_auto_back_and_forth no
 # assign apps to workspaces
 assign [class="Spotify" instance="spotify"] → $music
 assign [class="DBeaver" instance="DBeaver"] → $db
+assign [class="Protonvpn-app"] → $ws0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -227,6 +228,16 @@ mode "$mode_system" {
 
 bindsym $mod+BackSpace mode "$mode_system"
 bindsym $mod+Escape mode "$mode_system"
+
+
+set $mode_custom Custom (h) hello world, (Escape) back
+
+mode "$mode_custom" {
+    bindsym h exec --no-startup-id notify-send "hello world", mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+grave mode "$mode_custom"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
