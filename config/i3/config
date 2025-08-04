@@ -39,6 +39,8 @@ exec_always --no-startup-id pkill picom; picom --experimental-backends
 
 # Enable natural scrolling for touchpad
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Button Mapping Enabled" 1 2
 
 # Set wallpaper using feh (change the path to your wallpaper)
 exec_always --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh random
