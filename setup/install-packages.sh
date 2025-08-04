@@ -18,6 +18,7 @@ PACKAGES=(
     scrot
     maim
     xdotool
+    xinput
 )
 
 echo -e "${YELLOW}Updating package list...${NC}"
