@@ -83,6 +83,10 @@ bindsym $mod+b exec xdg-open about:blank
 bindsym $mod+e exec gnome-terminal -e ranger
 bindsym $mod+Shift+e exec nemo
 
+# start Google Chrome
+bindsym $mod+g exec google-chrome
+bindsym $mod+Shift+g exec google-chrome --incognito
+
 # open task manager (like Ctrl+Shift+Esc in Windows)
 bindsym Ctrl+Shift+Escape exec gnome-system-monitor
 
@@ -286,7 +290,7 @@ gaps outer 2
 # finds out, if available)
 bar {
         status_command i3status
-        position top
+	position top
         font pango:monospace 9
 
         colors {
