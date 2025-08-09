@@ -7,4 +7,9 @@ if [ -z "$BATTERY" ]; then
 fi
 PERCENT=$(echo "$BATTERY" | grep -o '[0-9]\+%' | head -1)
 STATUS=$(echo "$BATTERY" | grep -o 'Charging\|Discharging\|Full')
-echo "$PERCENT ($STATUS)"
+if [ "$STATUS" = "Charging" ]; then
+  echo "$PERCENT ($STATUS)"
+else
+  echo "$PERCENT"
+fi
+echo "#800080"
