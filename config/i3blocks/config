@@ -1,20 +1,20 @@
 # i3blocks config example
 # Each block is a script or command
 
-[cpu]
-command=$HOME/Projects/personal/desktop-config/bin/i3blocks/cpu_usage.sh
-interval=5
-label=CPU
+# [cpu]
+# command=$HOME/Projects/personal/desktop-config/bin/i3blocks/cpu_usage.sh
+# interval=5
+# label=CPU
 
-[memory]
-command=$HOME/Projects/personal/desktop-config/bin/i3blocks/mem_usage.sh
-interval=5
-label=MEM
+# [memory]
+# command=$HOME/Projects/personal/desktop-config/bin/i3blocks/mem_usage.sh
+# interval=5
+# label=MEM
 
-[disk]
-command=$HOME/Projects/personal/desktop-config/bin/i3blocks/disk_avail.sh
-interval=60
-label=DISK
+# [disk]
+# command=$HOME/Projects/personal/desktop-config/bin/i3blocks/disk_avail.sh
+# interval=60
+# label=DISK
 
 [wifi]
 command=$HOME/Projects/personal/desktop-config/bin/i3blocks/wifi_ssid.sh
@@ -27,5 +27,5 @@ interval=30
 label=BAT
 
 [time]
-command=$HOME/Projects/personal/desktop-config/bin/i3blocks/time_ymdhm.sh
+command=$HOME/Projects/personal/desktop-config/bin/i3blocks/time.sh
 interval=60
