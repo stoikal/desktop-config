@@ -10,8 +10,9 @@ NC='\033[0m'
 
 PACKAGES=(
     i3
-    i3lock
     i3status
+    i3lock
+    i3lock-fancy
     rofi
     picom
     feh
