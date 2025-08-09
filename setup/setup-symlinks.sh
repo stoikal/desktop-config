@@ -100,6 +100,12 @@ create_symlink \
     "$HOME/.config/i3status/config" \
     "i3status bar configuration"
 
+# i3blocks configuration
+create_symlink \
+    "$CONFIG_ROOT/config/i3blocks/config" \
+    "$HOME/.config/i3blocks/config" \
+    "i3blocks bar configuration"
+
 # Picom compositor configuration
 create_symlink \
     "$CONFIG_ROOT/config/picom/picom.conf" \
