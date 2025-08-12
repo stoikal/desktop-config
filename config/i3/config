@@ -242,11 +242,11 @@ bindsym $mod+BackSpace mode "$mode_system"
 bindsym $mod+Escape mode "$mode_system"
 
 
-set $mode_custom Custom (h) hello world, (1) comm, (Esc) back
+set $mode_custom (1) comm, (2) sisbinkar, (Esc) back
 
 mode "$mode_custom" {
-        bindsym h exec --no-startup-id notify-send "hello world", mode "default"
         bindsym 1 exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/ws1-comm.sh, mode "default"
+        bindsym 2 exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/ws-sisbinkar.sh, mode "default"
         bindsym Escape mode "default"
 }
 
