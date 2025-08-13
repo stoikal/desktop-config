@@ -72,31 +72,31 @@ bindsym --border button2 kill
 bindsym --whole-window Ctrl+button2 kill
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
-bindsym $mod+t exec gnome-terminal
+bindsym $mod+Return exec $bin/alternating_split_app.sh gnome-terminal
+bindsym $mod+t exec $bin/alternating_split_app.sh gnome-terminal
 
 # start firefox
-bindsym $mod+f exec firefox
+bindsym $mod+f exec $bin/alternating_split_app.sh firefox
 
 # start firefox in private mode
-bindsym $mod+Shift+f exec firefox --private-window
+bindsym $mod+Shift+f exec $bin/alternating_split_app.sh firefox --private-window
 
 # start VS Code
-bindsym $mod+c exec code
+bindsym $mod+c exec $bin/alternating_split_app.sh code
 
 # start default browser
-bindsym $mod+b exec xdg-open about:blank
+bindsym $mod+b exec $bin/alternating_split_app.sh xdg-open about:blank
 
 # start file managers
-bindsym $mod+e exec gnome-terminal -e ranger
-bindsym $mod+Shift+e exec nemo
+bindsym $mod+e exec $bin/alternating_split_app.sh gnome-terminal -e ranger
+bindsym $mod+Shift+e exec $bin/alternating_split_app.sh nemo
 
 # start Google Chrome
-bindsym $mod+g exec google-chrome
-bindsym $mod+Shift+g exec google-chrome --incognito
+bindsym $mod+g exec $bin/alternating_split_app.sh google-chrome
+bindsym $mod+Shift+g exec $bin/alternating_split_app.sh google-chrome --incognito
 
 # open task manager (like Ctrl+Shift+Esc in Windows)
-bindsym Ctrl+Shift+Escape exec gnome-system-monitor
+bindsym Ctrl+Shift+Escape exec $bin/alternating_split_app.sh gnome-system-monitor
 
 # change wallpaper randomly from wallpapers directory
 bindsym $mod+Shift+w exec --no-startup-id $bin/set-wallpaper.sh random
@@ -176,7 +176,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $hello "1.comm"
+set $ws1 "1.comm"
 set $ws2 "2.workspace"
 set $ws3 "3.workspace"
 set $ws4 "4.workspace"
@@ -188,7 +188,7 @@ set $music "9.music"
 set $ws0 "0"
 
 # switch to workspace
-bindsym $mod+1 workspace $hello
+bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
