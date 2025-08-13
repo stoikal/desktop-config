@@ -11,6 +11,11 @@
 
 set $mod Mod4
 
+# Custom variables
+set $bin /home/xlwp/Projects/personal/desktop-config/bin
+set $scripts /home/xlwp/Projects/personal/desktop-config/scripts
+set $config /home/xlwp/Projects/personal/desktop-config/config
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -46,7 +51,7 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Button Mapping Enabled" 1 2
 
 # Set wallpaper using feh (change the path to your wallpaper)
-exec_always --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh random
+exec_always --no-startup-id $bin/set-wallpaper.sh random
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -94,13 +99,13 @@ bindsym $mod+Shift+g exec google-chrome --incognito
 bindsym Ctrl+Shift+Escape exec gnome-system-monitor
 
 # change wallpaper randomly from wallpapers directory
-bindsym $mod+Shift+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh random
+bindsym $mod+Shift+w exec --no-startup-id $bin/set-wallpaper.sh random
 
 # browse and select wallpaper using rofi
-bindsym $mod+Ctrl+w exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh browse
+bindsym $mod+Ctrl+w exec --no-startup-id $bin/set-wallpaper.sh browse
 
 # restart picom manually
-bindsym $mod+Ctrl+p exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/start-picom.sh
+bindsym $mod+Ctrl+p exec --no-startup-id $bin/start-picom.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -109,8 +114,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $mod+d exec "rofi -modi drun,run,window -show drun -theme /home/xlwp/Projects/personal/desktop-config/config/rofi/themes/DarkBlueFork.rasi"
-bindsym $mod+Shift+d exec "rofi -modi drun,run,window -show run -theme /home/xlwp/Projects/personal/desktop-config/config/rofi/themes/DarkBlueFork.rasi"
+bindsym $mod+d exec "rofi -modi drun,run,window -show drun -theme $config/rofi/themes/DarkBlueFork.rasi"
+bindsym $mod+Shift+d exec "rofi -modi drun,run,window -show run -theme $config/rofi/themes/DarkBlueFork.rasi"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -245,9 +250,9 @@ bindsym $mod+Escape mode "$mode_system"
 set $mode_custom (1) comm, (2) sisbinkar, (3) siura, (Esc) back
 
 mode "$mode_custom" {
-        bindsym 1 exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/ws1-comm.sh, mode "default"
-        bindsym 2 exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/ws-sisbinkar.sh, mode "default"
-        bindsym 3 exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/scripts/ws-siura.sh, mode "default"
+        bindsym 1 exec --no-startup-id $scripts/ws1-comm.sh, mode "default"
+        bindsym 2 exec --no-startup-id $scripts/ws-sisbinkar.sh, mode "default"
+        bindsym 3 exec --no-startup-id $scripts/ws-siura.sh, mode "default"
         bindsym Escape mode "default"
 }
 
@@ -328,16 +333,16 @@ for_window [class="Gnome-system-monitor"] floating enable
 
 # Screenshots (with picom handling to prevent blur issues)
 # https://gist.github.com/dianjuar/ee774561a8bc02b077989bc17424a19f
-bindsym Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh full
-bindsym $mod+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh window
-bindsym Shift+Print exec --no-startup-id /home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh select
+bindsym Print exec --no-startup-id $bin/screenshot.sh full
+bindsym $mod+Print exec --no-startup-id $bin/screenshot.sh window
+bindsym Shift+Print exec --no-startup-id $bin/screenshot.sh select
 
 
 # rename workspace
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
 # battery alert
-exec --no-startup-id while true; do /home/xlwp/Projects/personal/desktop-config/bin/battery_alert.sh; sleep 60; done
+exec --no-startup-id while true; do $bin/battery_alert.sh; sleep 60; done
 
 # Set window colors
 # class                 border  bground text    indicator child_border
