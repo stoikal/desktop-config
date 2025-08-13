@@ -74,6 +74,7 @@ bindsym --whole-window Ctrl+button2 kill
 # start a terminal
 bindsym $mod+Return exec $bin/alternating_split_app.sh gnome-terminal
 bindsym $mod+t exec $bin/alternating_split_app.sh gnome-terminal
+bindsym $mod+Shift+t exec $bin/alternating_split_app.sh kitty
 
 # start firefox
 bindsym $mod+f exec $bin/alternating_split_app.sh firefox
