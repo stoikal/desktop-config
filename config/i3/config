@@ -343,6 +343,11 @@ bindsym Shift+Print exec --no-startup-id $bin/screenshot.sh select
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
 
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+
 # Set window colors
 # class                 border  bground text    indicator child_border
 client.focused          #E5FF00 #E5FF00 #000000 #E5FF00   #2a2d4e
