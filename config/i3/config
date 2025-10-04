@@ -342,8 +342,6 @@ bindsym Shift+Print exec --no-startup-id $bin/screenshot.sh select
 # rename workspace
 bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
-# battery alert
-exec --no-startup-id while true; do $bin/battery_alert.sh; sleep 60; done
 
 # Set window colors
 # class                 border  bground text    indicator child_border
