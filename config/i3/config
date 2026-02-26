@@ -53,6 +53,9 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 # Set wallpaper using feh (change the path to your wallpaper)
 exec_always --no-startup-id $bin/set-wallpaper.sh random
 
+# keyboards
+exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
