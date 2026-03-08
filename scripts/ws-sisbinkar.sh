@@ -25,7 +25,7 @@ WS_NAME="$WS.sisbinkar"
 i3-msg workspace "$WS_NAME"
 i3-msg rename workspace to "$WS_NAME"
 
-gnome-terminal --working-directory="$HOME/Projects/bitgroupasia/sisbinkar-web" &
+kitty --working-directory="$HOME/Projects/bitgroupasia/sisbinkar-web" &
 code "$HOME/Projects/bitgroupasia/sisbinkar-web" &
 firefox --new-window http://localhost:3000 &
 

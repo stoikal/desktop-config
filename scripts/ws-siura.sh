@@ -27,7 +27,7 @@ i3-msg rename workspace to "$WS_NAME"
 
 WORKING_DIRECTORY="$HOME/Projects/bitgroupasia/siura-web"
 
-gnome-terminal --working-directory="$WORKING_DIRECTORY" &
+kitty --working-directory="$WORKING_DIRECTORY" &
 code "$WORKING_DIRECTORY" &
 firefox &
 

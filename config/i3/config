@@ -74,10 +74,12 @@ bindsym --whole-window Ctrl+button3 floating toggle
 bindsym --border button2 kill
 bindsym --whole-window Ctrl+button2 kill
 
-# start a terminal
-bindsym $mod+Return exec gnome-terminal
-bindsym $mod+t exec gnome-terminal
-bindsym $mod+Shift+t exec kitty
+# start gnome-terminal
+bindsym $mod+Shift+t exec gnome-terminal
+
+# start kitty
+bindsym $mod+Return exec kitty
+bindsym $mod+t exec kitty
 
 # start firefox
 bindsym $mod+f exec firefox
@@ -92,7 +94,7 @@ bindsym $mod+c exec code
 bindsym $mod+b exec xdg-open about:blank
 
 # start file managers
-bindsym $mod+e exec gnome-terminal -e ranger
+bindsym $mod+e exec kitty -e ranger
 bindsym $mod+Shift+e exec nemo
 
 # start Google Chrome
