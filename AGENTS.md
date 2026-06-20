@@ -2,30 +2,38 @@
 
 ## Project Overview
 
-Linux desktop configuration files for an i3 window manager setup. Managed via symlinks from this repo to `~/.config/` paths.
+Linux desktop configuration files for i3 and Sway window managers. Managed via symlinks from this repo to `~/.config/` paths. Both WMs coexist — i3 is the current primary, Sway is being added for future migration.
 
 ## Repository Structure
 
 ```
 config/
-  i3/config          # i3 window manager config (keybindings, workspaces, bar, colors)
-  i3status/config    # i3status bar modules (battery, time, wifi, etc.)
-  i3blocks/config    # i3blocks bar (referenced, not yet present)
-  picom/picom.conf   # Picom compositor (referenced, not yet present)
-  rofi/themes/       # Rofi themes (referenced in i3 config)
-  ranger/rc.conf     # Ranger file manager config
+  i3/config                   # i3 window manager config (keybindings, workspaces, bar, colors)
+  sway/config                 # Sway window manager config (to be created)
+  i3status/config             # i3status bar modules (battery, time, wifi, etc.)
+  waybar/config.jsonc         # Waybar bar config (to be created)
+  waybar/style.css            # Waybar CSS styling (to be created)
+  wofi/config                 # Wofi launcher config (to be created)
+  wofi/style.css              # Wofi launcher styling (to be created)
+  swaylock/config             # Swaylock config (to be created)
+  swayidle/config             # Swayidle config (to be created)
+  picom/picom.conf            # Picom compositor (i3 only, not used in Sway)
+  rofi/themes/                # Rofi themes (i3 only, not used in Sway)
+  kitty/kitty.conf            # Kitty terminal config (works on both)
+  ranger/rc.conf              # Ranger file manager config (works on both)
 bin/
-  set-wallpaper.sh   # Wallpaper setter via feh/rofi
-  screenshot.sh       # Screenshot tool using maim (full/window/select)
-  i3blocks/           # i3blocks blocklets (battery, time, wifi, disk, mem, cpu)
+  set-wallpaper.sh            # Wallpaper setter (feh for i3, swaybg for Sway)
+  screenshot.sh               # Screenshot tool (maim for i3, grim/slurp for Sway)
+  caffeine.sh                 # Caffeine toggle (xset for i3, swaymsg for Sway)
+  i3blocks/                   # i3blocks blocklets (i3 only)
 scripts/
-  ws1-comm.sh         # Opens Firefox with WhatsApp on workspace 1
-  ws-sisbinkar.sh    # Opens sisbinkar project workspace
-  ws-siura.sh         # Opens siura project workspace
+  ws1-comm.sh                 # Opens Firefox with WhatsApp on workspace 1
+  ws-sisbinkar.sh             # Opens sisbinkar project workspace
+  ws-siura.sh                 # Opens siura project workspace
 setup/
   setup-symlinks.sh           # Creates symlinks from repo to ~/.config/
-  install-packages.sh          # Installs apt packages (i3, rofi, picom, feh, etc.)
-  scripts-make-executable.sh   # Makes scripts executable
+  install-packages.sh         # Installs apt packages
+  scripts-make-executable.sh  # Makes scripts executable
 ```
 
 ## Conventions
