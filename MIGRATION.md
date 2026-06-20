@@ -29,7 +29,9 @@
 | `bin/caffeine.sh` | Rewrite: `xset`/`xdg-screensaver` → `swaymsg inhibit_idle` |
 | `scripts/ws1-comm.sh` | `i3-msg` → `swaymsg` |
 | `scripts/ws-saktimart.sh` | `i3-msg` → `swaymsg`, `xdotool` → `swaymsg -t get_tree \| jq` |
-| `setup/setup-symlinks.sh` | Add sway, swaylock, waybar, wofi symlinks |
+| `scripts/ws-sisbinkar.sh` | `i3-msg` → `swaymsg`, `xdotool` → `swaymsg -t get_tree \| jq` |
+| `scripts/ws-siura.sh` | `i3-msg` → `swaymsg`, `xdotool` → `swaymsg -t get_tree \| jq` |
+| `setup/setup-symlinks.sh` | Add sway, swaylock, waybar, wofi, kitty, rofi symlinks (also fix missing kitty/rofi) |
 | `setup/install-packages.sh` | Swap i3→sway, add swaybg/swayidle/swaylock/grim/slurp/wl-clipboard/jq/waybar/wofi, remove picom/maim/scrot/xdotool/xinput/i3lock/i3lock-fancy |
 | `AGENTS.md` | Add sway config info, new deps, new key bindings |
 
@@ -95,6 +97,12 @@ Mimics rofi DarkBlueFork theme colors for the launcher.
 - `jq` (for swaymsg parsing)
 - `waybar`
 - `wofi`
+
+## Notes
+
+- **swayidle**: No separate config file needed — configured inline in sway config via `exec swayidle -w ...`
+- **`bin/start-picom.sh`**: Referenced in `config/i3/config:114` but doesn't exist in repo. Do **not** carry this forward to Sway config.
+- **`dex --environment sway`**: Ensure `.desktop` autostart entries use `OnlyShowIn=sway` (or remove `OnlyShowIn`), otherwise `dex` will skip them.
 
 ## Switching Between i3 and Sway
 

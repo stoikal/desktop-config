@@ -1,0 +1,38 @@
+window {
+    background-color: #160021;
+    border: 1px solid #DBDFBC;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#input {
+    background-color: #160021;
+    color: #DBDFBC;
+    border: 1px solid #DBDFBC;
+    padding: 6px;
+}
+
+#inner-box {
+    background-color: #160021;
+    margin: 4px;
+}
+
+#outer-box {
+    background-color: #160021;
+    padding: 6px;
+}
+
+#text {
+    color: #DBDFBC;
+    padding: 4px;
+}
+
+#selected {
+    background-color: #E5FF00;
+    color: #160021;
+}
+
+#entry:selected {
+    background-color: #E5FF00;
+    color: #160021;
+}
