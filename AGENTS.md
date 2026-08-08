@@ -18,7 +18,6 @@ bin/
   set-wallpaper.sh            # Wallpaper setter (feh)
   screenshot.sh               # Screenshot tool (maim, xdotool, xclip)
   caffeine.sh                 # Caffeine toggle (xset, xdg-screensaver)
-  i3blocks/                   # i3blocks blocklets
 scripts/
   ws1-comm.sh                 # Opens Firefox with WhatsApp on workspace 1
   ws-saktimart.sh             # Opens saktimart project workspace
