@@ -2,29 +2,23 @@
 
 ## Project Overview
 
-Linux desktop configuration files for i3 and Sway window managers. Managed via symlinks from this repo to `~/.config/` paths. Both WMs coexist — i3 is the current primary, Sway is being added for future migration.
+Linux desktop configuration files for the i3 window manager. Managed via symlinks from this repo to `~/.config/` paths.
 
 ## Repository Structure
 
 ```
 config/
   i3/config                   # i3 window manager config (keybindings, workspaces, bar, colors)
-  sway/config                 # Sway window manager config (adapted from i3/config)
   i3status/config             # i3status bar modules (battery, time, wifi, etc.)
-  waybar/config.jsonc         # Waybar bar config (Sway native, replaces i3status bar)
-  waybar/style.css            # Waybar CSS styling (colors match i3 theme)
-  wofi/config                 # Wofi launcher config (Sway native, replaces rofi)
-  wofi/style.css              # Wofi launcher styling (mimics rofi DarkBlueFork)
-  swaylock/config             # Swaylock config (colors match i3 theme)
-  picom/picom.conf            # Picom compositor (i3 only, not used in Sway)
-  rofi/themes/                # Rofi themes (i3 only, not used in Sway)
-  kitty/kitty.conf            # Kitty terminal config (works on both)
-  ranger/rc.conf              # Ranger file manager config (works on both)
+  picom/picom.conf            # Picom compositor
+  rofi/themes/                # Rofi themes
+  kitty/kitty.conf            # Kitty terminal config
+  ranger/rc.conf              # Ranger file manager config
 bin/
-  set-wallpaper.sh            # Wallpaper setter (feh for i3, swaybg for Sway)
-  screenshot.sh               # Screenshot tool (maim for i3, grim/slurp for Sway)
-  caffeine.sh                 # Caffeine toggle (xset for i3, swayidle kill/restart for Sway)
-  i3blocks/                   # i3blocks blocklets (i3 only)
+  set-wallpaper.sh            # Wallpaper setter (feh)
+  screenshot.sh               # Screenshot tool (maim, xdotool, xclip)
+  caffeine.sh                 # Caffeine toggle (xset, xdg-screensaver)
+  i3blocks/                   # i3blocks blocklets
 scripts/
   ws1-comm.sh                 # Opens Firefox with WhatsApp on workspace 1
   ws-saktimart.sh             # Opens saktimart project workspace
@@ -32,7 +26,7 @@ scripts/
   ws-siura.sh                 # Opens siura project workspace
 setup/
   setup-symlinks.sh           # Creates symlinks from repo to ~/.config/
-  install-packages.sh         # Installs apt packages (common + i3 + sway)
+  install-packages.sh         # Installs apt packages
   scripts-make-executable.sh  # Makes scripts executable
 ```
 
@@ -41,43 +35,32 @@ setup/
 - All shell scripts use `#!/bin/bash` shebang
 - Config symlinks point from `~/.config/<app>/config` to `$REPO/config/<app>/config`
 - i3 config references scripts via variables: `$bin`, `$scripts`, `$config`
-- Sway config uses the same variables and same script paths
-- Shell scripts detect `XDG_SESSION_TYPE` to choose X11 or Wayland tools
-- Workspace scripts use `i3-msg` or `swaymsg` based on session type
 - Hardcoded paths reference `/home/xlwp/Projects/personal/desktop-config` (update if repo moves)
 - Shell scripts should be made executable after changes: `find bin scripts -name "*.sh" -type f -exec chmod +x {} \;`
 
-## Key Bindings (i3 and Sway — same for both)
+## Key Bindings
 
 - Mod key: `Mod4` (Super/Windows)
 - Terminal: `$mod+Return` or `$mod+t` (kitty)
-- Launcher: `$mod+d` (drun), `$mod+Shift+d` (run) — rofi on i3, wofi on Sway
+- Launcher: `$mod+d` (drun), `$mod+Shift+d` (run) — rofi
 - Workspace mode: `$mod+grave` (custom workspace launcher)
 - System mode: `$mod+BackSpace` or `$mod+Escape`
 - Resize mode: `$mod+r`
 - Screenshot: `Print` (full), `$mod+Print` (window), `Shift+Print` (select)
 - Wallpaper: `$mod+Shift+w` (random), `$mod+Ctrl+w` (browse)
-- Reload config: `$mod+Shift+c` (i3 only — Sway has no restart)
-- Exit: `$mod+Shift+x` (i3-nagbar on i3, swaynag on Sway)
+- Reload config: `$mod+Shift+c`
+- Exit: `$mod+Shift+x` (i3-nagbar)
 
 ## After Making Changes
 
 1. Make new scripts executable: `chmod +x` or re-run `setup/scripts-make-executable.sh`
 2. If symlinks are new, re-run `setup/setup-symlinks.sh`
 3. Reload i3 config: `i3-msg reload` or press `$mod+Shift+c`
-4. Reload Sway config: `swaymsg reload`
-5. No linting or typechecking — just validate shell scripts with `bash -n <file>` for syntax errors
+4. No linting or typechecking — just validate shell scripts with `bash -n <file>` for syntax errors
 
 ## Dependencies
 
-### Common
-brightnessctl, dex, firefox-esr, gnome-system-monitor, gnome-terminal, jq, kitty, libnotify-bin, network-manager, network-manager-gnome, nemo, xclip
-
-### i3 only
-acpi, bc, i3, i3status, i3lock, i3lock-fancy, rofi, picom, feh, scrot, maim, xdotool, xinput
-
-### Sway only
-sway, swaybg, swayidle, swaylock, grim, slurp, wl-clipboard, waybar, wofi
+acpi, bc, brightnessctl, dex, feh, firefox-esr, gnome-system-monitor, gnome-terminal, i3, i3lock, i3lock-fancy, i3status, jq, kitty, libnotify-bin, maim, nemo, network-manager, network-manager-gnome, picom, rofi, scrot, xclip, xdotool, xinput
 
 ### Manual install
 google-chrome (downloaded from Google's website)

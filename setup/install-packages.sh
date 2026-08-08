@@ -38,18 +38,6 @@ I3_PACKAGES=(
     xinput
 )
 
-SWAY_PACKAGES=(
-    sway
-    swaybg
-    swayidle
-    swaylock
-    grim
-    slurp
-    wl-clipboard
-    waybar
-    wofi
-)
-
 echo -e "${YELLOW}Updating package list...${NC}"
 sudo apt update
 
@@ -58,8 +46,5 @@ sudo apt install -y "${COMMON[@]}"
 
 echo -e "${YELLOW}Installing i3 packages: ${I3_PACKAGES[*]}${NC}"
 sudo apt install -y "${I3_PACKAGES[@]}"
-
-echo -e "${YELLOW}Installing Sway packages: ${SWAY_PACKAGES[*]}${NC}"
-sudo apt install -y "${SWAY_PACKAGES[@]}"
 
 echo -e "${GREEN}✓ All packages installed successfully.${NC}"

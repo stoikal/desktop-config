@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    MSG="swaymsg"
-else
-    MSG="i3-msg"
-fi
+MSG="i3-msg"
 
 USED_WS=$($MSG -t get_workspaces | jq '.[].num')
 for i in {1..9}; do

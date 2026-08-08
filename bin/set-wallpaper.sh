@@ -5,21 +5,13 @@ WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 mkdir -p "$WALLPAPER_DIR"
 
 kill_bg() {
-    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-        pkill swaybg 2>/dev/null
-    else
-        pkill feh 2>/dev/null
-    fi
+    pkill feh 2>/dev/null
 }
 
 set_wallpaper() {
     if [ -f "$1" ]; then
         kill_bg
-        if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-            swaybg -i "$1" -m fill &
-        else
-            feh --bg-fill "$1"
-        fi
+        feh --bg-fill "$1"
         echo "Wallpaper set to: $1"
     else
         echo "Error: Wallpaper file not found: $1"
@@ -34,27 +26,14 @@ set_random_wallpaper() {
     fi
 
     kill_bg
-    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-        local file
-        file=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) | shuf -n 1)
-        swaybg -i "$file" -m fill &
-    else
-        feh --bg-fill --randomize "$WALLPAPER_DIR"/*
-    fi
+    feh --bg-fill --randomize "$WALLPAPER_DIR"/*
     echo "Random wallpaper set from $WALLPAPER_DIR"
 }
 
 browse_wallpaper() {
-    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-        if ! command -v wofi &> /dev/null; then
-            echo "wofi not found"
-            exit 1
-        fi
-    else
-        if ! command -v rofi &> /dev/null; then
-            echo "rofi not found"
-            exit 1
-        fi
+    if ! command -v rofi &> /dev/null; then
+        echo "rofi not found"
+        exit 1
     fi
 
     wallpapers=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) -printf "%f\n" 2>/dev/null)
@@ -64,11 +43,7 @@ browse_wallpaper() {
         exit 1
     fi
 
-    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-        selected=$(echo "$wallpapers" | wofi -d -p "Select wallpaper:")
-    else
-        selected=$(echo "$wallpapers" | rofi -dmenu -p "Select wallpaper:")
-    fi
+    selected=$(echo "$wallpapers" | rofi -dmenu -p "Select wallpaper:")
 
     if [ -n "$selected" ]; then
         set_wallpaper "$WALLPAPER_DIR/$selected"

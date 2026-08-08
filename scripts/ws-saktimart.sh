@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    MSG="swaymsg"
-else
-    MSG="i3-msg"
-fi
+MSG="i3-msg"
 
 $MSG workspace "1.saktimart-be"
 $MSG workspace "2.opencode"
@@ -21,14 +17,8 @@ wait_for_window() {
     local timeout=30
     local elapsed=0
     while true; do
-        if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-            if swaymsg -t get_tree | jq -e ".. | objects | select((.app_id // \"\") + (if .window_properties then .window_properties.class else \"\" end) | contains(\"$target\")) | select(.visible? == true)" 2>/dev/null | grep -q '"type"'; then
-                return 0
-            fi
-        else
-            if xdotool search --class "$target" &>/dev/null; then
-                return 0
-            fi
+        if xdotool search --class "$target" &>/dev/null; then
+            return 0
         fi
         sleep 0.5
         elapsed=$((elapsed + 1))

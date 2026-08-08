@@ -130,40 +130,6 @@ create_symlink \
     "$HOME/.config/rofi" \
     "Rofi launcher configuration"
 
-# Sway window manager configuration
-create_symlink \
-    "$CONFIG_ROOT/config/sway/config" \
-    "$HOME/.config/sway/config" \
-    "Sway window manager configuration"
-
-# Swaylock configuration
-create_symlink \
-    "$CONFIG_ROOT/config/swaylock/config" \
-    "$HOME/.config/swaylock/config" \
-    "Swaylock configuration"
-
-# Waybar configuration
-create_symlink \
-    "$CONFIG_ROOT/config/waybar/config.jsonc" \
-    "$HOME/.config/waybar/config.jsonc" \
-    "Waybar configuration"
-
-create_symlink \
-    "$CONFIG_ROOT/config/waybar/style.css" \
-    "$HOME/.config/waybar/style.css" \
-    "Waybar styling"
-
-# Wofi launcher configuration
-create_symlink \
-    "$CONFIG_ROOT/config/wofi/config" \
-    "$HOME/.config/wofi/config" \
-    "Wofi launcher configuration"
-
-create_symlink \
-    "$CONFIG_ROOT/config/wofi/style.css" \
-    "$HOME/.config/wofi/style.css" \
-    "Wofi launcher styling"
-
 # Setup VS Code settings
 setup_vscode_settings
 
@@ -182,17 +148,12 @@ echo -e "${GREEN}✓ Picom configuration symlinked${NC}"
 echo -e "${GREEN}✓ Ranger configuration symlinked${NC}"
 echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
-echo -e "${GREEN}✓ Sway configuration symlinked${NC}"
-echo -e "${GREEN}✓ Swaylock configuration symlinked${NC}"
-echo -e "${GREEN}✓ Waybar configuration symlinked${NC}"
-echo -e "${GREEN}✓ Wofi configuration symlinked${NC}"
 echo -e "${GREEN}✓ Scripts made executable${NC}"
 echo
 echo -e "${YELLOW}Next steps:${NC}"
 echo "1. Reload i3: Super+Shift+R (or logout/login)"
-echo "2. For Sway: select 'Sway' at display manager, or run 'sway' from tty"
-echo "3. Test wallpaper script: $CONFIG_ROOT/bin/set-wallpaper.sh random"
-echo "4. Test screenshot script: $CONFIG_ROOT/bin/screenshot.sh select"
+echo "2. Test wallpaper script: $CONFIG_ROOT/bin/set-wallpaper.sh random"
+echo "3. Test screenshot script: $CONFIG_ROOT/bin/screenshot.sh select"
 echo
 echo -e "${BLUE}Note: Your original config files have been backed up with timestamps${NC}"
 echo -e "${BLUE}Configuration changes in this repository will now automatically apply to your system${NC}"
