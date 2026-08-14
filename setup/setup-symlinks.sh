@@ -109,6 +109,14 @@ create_symlink \
     "$HOME/.config/rofi" \
     "Rofi launcher configuration"
 
+########## HYPRLAND ##########
+
+# Hyprland window manager configuration
+create_symlink \
+    "$CONFIG_ROOT/config/hypr/hyprland.lua" \
+    "$HOME/.config/hypr/hyprland.lua" \
+    "Hyprland window manager configuration"
+
 
 echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"
@@ -116,6 +124,7 @@ echo -e "${GREEN}✓ i3status configuration symlinked${NC}"
 echo -e "${GREEN}✓ Picom configuration symlinked${NC}"
 echo -e "${GREEN}✓ Ranger configuration symlinked${NC}"
 echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
+echo -e "${GREEN}✓ Hyprland configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
 echo
 echo -e "${YELLOW}Next steps:${NC}"
