@@ -6,6 +6,8 @@
 - waybar
 - fonts-font-awesome
 - hyprlauncher
+- grim // for screenshot
+- wl-copy
 
 # removed packages
 
@@ -22,7 +24,7 @@ picom -> hyprland
 #TODO
 - [ ] bindsym $mod+Escape mode "$mode_system"
 - [ ] bindsym $mod+grave mode "$mode_custom"
-- [ ] screenshot function
+- [x] screenshot function
 - [ ] wallpaper
 - [ ] keybinding $mod+Return	kitty (hyprland only binds $mod+t)
 - [ ] $mod+Shift+t	gnome-terminal

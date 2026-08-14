@@ -11,20 +11,13 @@ take_screenshot() {
 
     case "$mode" in
         "full")
-            maim "$filename"
+            grim "$filename"
             ;;
         "window")
-            maim --window $(xdotool getactivewindow) "$filename"
+            grim -g "$(hyprctl -j activewindow | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" "$filename"
             ;;
         "select")
-            # Temporarily disable picom to prevent blur on selection overlay
-            pkill picom
-
-            # Take screenshot with selection
-            maim --select "$filename"
-
-            # Restart picom
-            picom --experimental-backends &
+            grim -g "$(slurp)" "$filename"
             ;;
         *)
             echo "Usage: $0 [full|window|select]"
@@ -41,9 +34,9 @@ take_screenshot() {
             notify-send "Screenshot" "Saved to $filename" --icon=camera-photo
         fi
 
-        # Optional: Copy to clipboard (requires xclip)
-        if command -v xclip &> /dev/null; then
-            xclip -selection clipboard -t image/png -i "$filename"
+        # Optional: Copy to clipboard (requires wl-copy)
+        if command -v wl-copy &> /dev/null; then
+            wl-copy < "$filename"
             echo "Screenshot copied to clipboard"
         fi
     else

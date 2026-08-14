@@ -30,7 +30,6 @@ hl.monitor({
 -- Set programs that you use
 local terminal          = "kitty"
 local fileManager       = "nemo"
-local fileManagerAlt    = "ranger"
 local menu              = "hyprlauncher"
 
 
@@ -259,7 +258,7 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " -e " .. fileManagerAlt))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " -e ranger"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.fullscreen({ fullscreen = "toggle", mode = 0 }))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
@@ -306,6 +305,11 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+-- Screenshots
+hl.bind("Print",               hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh full"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh window"))
+hl.bind("SHIFT + Print",       hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh select"))
 
 
 --------------------------------
