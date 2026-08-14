@@ -4,5 +4,6 @@
 - hyprland
 - hyprland-guiutils
 - waybar
+- fonts-font-awesome
 
 # removed packages
