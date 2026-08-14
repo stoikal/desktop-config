@@ -1,4 +1,5 @@
 #!/bin/bash
-# Make all files in the scripts directory executable
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CONFIG_ROOT="$(dirname "$SCRIPT_DIR")"
 
-chmod +x "$HOME/Projects/personal/desktop-config/scripts"/*
+chmod +x "$CONFIG_ROOT/bin"/*.sh "$CONFIG_ROOT/scripts"/*.sh

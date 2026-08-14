@@ -69,21 +69,6 @@ create_symlink() {
     echo
 }
 
-# Function to setup VS Code workspace settings
-setup_vscode_settings() {
-    echo -e "${BLUE}=== VS Code Workspace Settings ===${NC}"
-    
-    local source="$CONFIG_ROOT/.vscode/settings.json"
-    local target="$CONFIG_ROOT/.vscode/settings.json"
-    
-    if [ -f "$source" ]; then
-        echo -e "${GREEN}✓ VS Code workspace settings already in place${NC}"
-    else
-        echo -e "${YELLOW}VS Code workspace settings will be created when you open the workspace${NC}"
-    fi
-    echo
-}
-
 # Main configuration mappings
 echo -e "${BLUE}=== Creating Configuration Symlinks ===${NC}"
 echo
@@ -124,16 +109,6 @@ create_symlink \
     "$HOME/.config/rofi" \
     "Rofi launcher configuration"
 
-# Setup VS Code settings
-setup_vscode_settings
-
-echo -e "${BLUE}=== Script Management ===${NC}"
-
-# Make all scripts executable
-echo -e "${YELLOW}Making scripts executable...${NC}"
-find "$CONFIG_ROOT/bin" -name "*.sh" -type f -exec chmod +x {} \;
-echo -e "${GREEN}✓ All scripts are now executable${NC}"
-echo
 
 echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"
@@ -142,12 +117,12 @@ echo -e "${GREEN}✓ Picom configuration symlinked${NC}"
 echo -e "${GREEN}✓ Ranger configuration symlinked${NC}"
 echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
-echo -e "${GREEN}✓ Scripts made executable${NC}"
 echo
 echo -e "${YELLOW}Next steps:${NC}"
-echo "1. Reload i3: Super+Shift+R (or logout/login)"
-echo "2. Test wallpaper script: $CONFIG_ROOT/bin/set-wallpaper.sh random"
-echo "3. Test screenshot script: $CONFIG_ROOT/bin/screenshot.sh select"
+echo "1. Make scripts executable: $CONFIG_ROOT/setup/scripts-make-executable.sh"
+echo "2. Reload i3: Super+Shift+R (or logout/login)"
+echo "3. Test wallpaper script: $CONFIG_ROOT/bin/set-wallpaper.sh random"
+echo "4. Test screenshot script: $CONFIG_ROOT/bin/screenshot.sh select"
 echo
 echo -e "${BLUE}Note: Your original config files have been backed up with timestamps${NC}"
 echo -e "${BLUE}Configuration changes in this repository will now automatically apply to your system${NC}"

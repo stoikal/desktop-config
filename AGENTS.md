@@ -35,7 +35,7 @@ setup/
 - Config symlinks point from `~/.config/<app>/config` to `$REPO/config/<app>/config`
 - i3 config references scripts via variables: `$bin`, `$scripts`, `$config`
 - Hardcoded paths reference `/home/xlwp/Projects/personal/desktop-config` (update if repo moves)
-- Shell scripts should be made executable after changes: `find bin scripts -name "*.sh" -type f -exec chmod +x {} \;`
+- Shell scripts should be made executable after changes: run `setup/scripts-make-executable.sh`
 
 ## Key Bindings
 
@@ -52,10 +52,15 @@ setup/
 
 ## After Making Changes
 
-1. Make new scripts executable: `chmod +x` or re-run `setup/scripts-make-executable.sh`
+1. Make new scripts executable: run `setup/scripts-make-executable.sh` (covers both `bin/` and `scripts/`)
 2. If symlinks are new, re-run `setup/setup-symlinks.sh`
 3. Reload i3 config: `i3-msg reload` or press `$mod+Shift+c`
 4. No linting or typechecking — just validate shell scripts with `bash -n <file>` for syntax errors
+
+### Fresh clone setup
+
+1. `setup/scripts-make-executable.sh` — make scripts executable
+2. `setup/setup-symlinks.sh` — create symlinks to `~/.config/`
 
 ## Dependencies
 
