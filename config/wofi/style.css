@@ -4,24 +4,26 @@
  */
 
 window {
-    background-color: #160021;
-    border: 1px solid #dbdfbc;
+    background-color: transparent;
 }
 
 #outer-box {
+    background-color: #160021;
     border: 0;
-    padding: 5px;
+    padding: 10px 8px;
+    border-radius: 8px;
+    border: 1px solid #dbdfbc;
 }
 
 #input {
     background-color: #160021;
     color: #dbdfbc;
-    border-top: 2px solid #dbdfbc;
-    padding: 1px;
-}
+    padding: 1px 8px;
+    font-size: 16px;
+    margin-bottom: 6px;
+}   
 
 #inner-box {
-    border-top: 2px solid #dbdfbc;
     padding: 2px 0 0;
 }
 
@@ -34,6 +36,7 @@ window {
 }
 
 #text {
+    font-size: 16px;
     color: #dbdfbc;
     background-color: transparent;
 }
