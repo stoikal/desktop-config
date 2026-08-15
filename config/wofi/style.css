@@ -5,6 +5,7 @@
 
 window {
     background-color: transparent;
+    font-family: "JetBrains Mono";
 }
 
 #outer-box {
@@ -32,7 +33,7 @@ window {
 }
 
 #entry {
-    padding: 1px;
+    padding: 4px 6px;
 }
 
 #text {
@@ -43,8 +44,10 @@ window {
 
 #entry:selected {
     background-color: #E5FF00;
+    color:#160021;
 }
 
 #entry:selected #text {
     color: #160021;
+    font-weight: bold;
 }
