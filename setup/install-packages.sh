@@ -38,6 +38,16 @@ I3_PACKAGES=(
     xinput
 )
 
+HYPRLAND_PACKAGES=(
+    hyprland
+    swaybg
+    waybar
+    wofi
+    grim
+    slurp
+    wl-clipboard
+)
+
 echo -e "${YELLOW}Updating package list...${NC}"
 sudo apt update
 
@@ -46,5 +56,8 @@ sudo apt install -y "${COMMON[@]}"
 
 echo -e "${YELLOW}Installing i3 packages: ${I3_PACKAGES[*]}${NC}"
 sudo apt install -y "${I3_PACKAGES[@]}"
+
+echo -e "${YELLOW}Installing Hyprland packages: ${HYPRLAND_PACKAGES[*]}${NC}"
+sudo apt install -y "${HYPRLAND_PACKAGES[@]}"
 
 echo -e "${GREEN}✓ All packages installed successfully.${NC}"

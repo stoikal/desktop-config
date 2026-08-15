@@ -7,7 +7,8 @@
 - fonts-font-awesome
 - hyprlauncher
 - grim // for screenshot
-- wl-copy
+- wl-clipboard
+- slurp
 - wofi
 - swaybg
 
