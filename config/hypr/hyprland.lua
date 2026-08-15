@@ -82,16 +82,25 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -----------------------
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
+
+-- Shared palette (mirrors config/waybar/style.css)
+local palette = {
+    cyan   = "rgba(33ccffee)",
+    green  = "rgba(00ff99ee)",
+    muted  = "rgba(595959aa)",
+    shadow = 0xee1a1a1a,
+}
+
 hl.config({
     general = {
         gaps_in  = 4,
-        gaps_out = 16,
+        gaps_out = 8,
 
         border_size = 1,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = { colors = { palette.cyan, palette.green }, angle = 45 },
+            inactive_border = palette.muted,
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -113,9 +122,9 @@ hl.config({
 
         shadow = {
             enabled      = true,
-            range        = 4,
+            range        = 8,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = palette.shadow,
         },
 
         blur = {
