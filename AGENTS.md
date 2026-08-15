@@ -17,6 +17,7 @@ config/
   hypr/hyprland.lua           # Hyprland window manager config (Lua DSL)
   waybar/config.jsonc         # Waybar status bar config
   waybar/style.css            # Waybar styling
+  wofi/style.css              # Wofi launcher style (mirrors rofi DarkBlueFork)
 bin/
   set-wallpaper.sh            # Wallpaper setter for i3 (feh)
   set-wallpaper-hypr.sh       # Wallpaper setter for Hyprland (swaybg + wofi)

@@ -128,6 +128,12 @@ create_symlink \
     "$HOME/.config/waybar/style.css" \
     "Waybar style"
 
+# Wofi launcher style (mirrors config/rofi/themes/DarkBlueFork.rasi)
+create_symlink \
+    "$CONFIG_ROOT/config/wofi/style.css" \
+    "$HOME/.config/wofi/style.css" \
+    "Wofi launcher style"
+
 
 echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"
@@ -138,6 +144,7 @@ echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
 echo -e "${GREEN}✓ Hyprland configuration symlinked${NC}"
 echo -e "${GREEN}✓ Waybar configuration symlinked${NC}"
+echo -e "${GREEN}✓ Wofi style symlinked${NC}"
 echo
 echo -e "${YELLOW}Next steps:${NC}"
 echo "1. Make scripts executable: $CONFIG_ROOT/setup/scripts-make-executable.sh"

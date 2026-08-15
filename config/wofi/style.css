@@ -1,0 +1,47 @@
+/*
+ * Mirrors config/rofi/themes/DarkBlueFork.rasi
+ * Wofi auto-loads this from ~/.config/wofi/style.css
+ */
+
+window {
+    background-color: #160021;
+    border: 1px solid #dbdfbc;
+}
+
+#outer-box {
+    border: 0;
+    padding: 5px;
+}
+
+#input {
+    background-color: #160021;
+    color: #dbdfbc;
+    border-top: 2px solid #dbdfbc;
+    padding: 1px;
+}
+
+#inner-box {
+    border-top: 2px solid #dbdfbc;
+    padding: 2px 0 0;
+}
+
+#scroll {
+    padding: 0;
+}
+
+#entry {
+    padding: 1px;
+}
+
+#text {
+    color: #dbdfbc;
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: #E5FF00;
+}
+
+#entry:selected #text {
+    color: #160021;
+}
