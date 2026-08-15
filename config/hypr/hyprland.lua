@@ -47,6 +47,7 @@ local bin               = "/home/xlwp/Projects/personal/desktop-config/bin"
 --
 hl.on("hyprland.start", function ()
   hl.exec_cmd("nm-applet")
+  hl.exec_cmd("blueman-applet")
   hl.exec_cmd("waybar")
   hl.exec_cmd(bin .. "/set-wallpaper-hypr.sh random")
 end)

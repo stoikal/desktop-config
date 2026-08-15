@@ -70,7 +70,7 @@ setup/
 
 ## Dependencies
 
-acpi, bc, brightnessctl, dex, feh, firefox-esr, gnome-system-monitor, gnome-terminal, i3, i3lock, i3lock-fancy, i3status, jq, kitty, libnotify-bin, maim, nemo, network-manager, network-manager-gnome, picom, rofi, scrot, xclip, xdotool, xinput
+acpi, bc, bluez, blueman, brightnessctl, dex, feh, firefox-esr, gnome-system-monitor, gnome-terminal, i3, i3lock, i3lock-fancy, i3status, jq, kitty, libnotify-bin, maim, nemo, network-manager, network-manager-gnome, picom, rofi, scrot, xclip, xdotool, xinput
 
 ### Manual install
 google-chrome (downloaded from Google's website)

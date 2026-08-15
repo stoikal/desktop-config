@@ -46,6 +46,8 @@ HYPRLAND_PACKAGES=(
     grim
     slurp
     wl-clipboard
+    bluez
+    blueman
 )
 
 echo -e "${YELLOW}Updating package list...${NC}"
