@@ -91,7 +91,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 local palette = {
     cyan   = "rgba(33ccffee)",
     green  = "rgba(00ff99ee)",
-    muted  = "rgba(595959aa)",
+    muted  = "rgba(aaaaaaaa)",
     shadow = 0xee1a1a1a,
 }
 
@@ -127,7 +127,7 @@ hl.config({
         shadow = {
             enabled      = true,
             range        = 4,
-            render_power = 4,
+            render_power = 8,
             color        = palette.shadow,
         },
 
