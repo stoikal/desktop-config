@@ -29,9 +29,10 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal          = "kitty"
-local terminalAlt   = "gnome-terminal"
+local terminalAlt       = "gnome-terminal"
 local fileManager       = "nemo"
-local menu              = "hyprlauncher"
+local menu              = "wofi --insensitive --show drun"
+local menuRun           = "wofi --insensitive --show run"
 local bin               = "/home/xlwp/Projects/personal/desktop-config/bin"
 
 
@@ -275,6 +276,7 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(terminal .. " -e ranger"))
 hl.bind(mainMod .. " + V", hl.dsp.window.fullscreen({ fullscreen = "toggle", mode = 0 }))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(menuRun))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
