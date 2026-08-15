@@ -29,6 +29,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal          = "kitty"
+local terminalAlt   = "gnome-terminal"
 local fileManager       = "nemo"
 local menu              = "hyprlauncher"
 
@@ -263,16 +264,28 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(terminalAlt))
 local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " -e ranger"))
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(terminal .. " -e ranger"))
 hl.bind(mainMod .. " + V", hl.dsp.window.fullscreen({ fullscreen = "toggle", mode = 0 }))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+-- Firefox
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("firefox --private-window"))
+
+-- Google Chrome
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("google-chrome"))
+hl.bind(mainMod .. " + SHIFT + G", hl.dsp.exec_cmd("google-chrome --incognito"))
+
+-- Task manager
+hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd("gnome-system-monitor"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -319,6 +332,11 @@ hl.bind("Print",               hl.dsp.exec_cmd("/home/xlwp/Projects/personal/des
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh window"))
 hl.bind("SHIFT + Print",       hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh select"))
 
+-- Groups (tabbed layout for selected windows)
+hl.bind(mainMod .. " + Z",        hl.dsp.group.toggle("")) -- toggle group membership
+hl.bind(mainMod .. " + SHIFT + Z",hl.dsp.group.lock({ action = "toggle" })) -- lock group so new windows inherit
+hl.bind(mainMod .. " + TAB",      hl.dsp.group.next()) -- cycle tabs in group
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.group.prev()) -- reverse cycle tabs
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
@@ -367,5 +385,13 @@ hl.window_rule({
     match = { class = "hyprland-run" },
 
     move  = "20 monitor_h-120",
+    float = true,
+})
+
+-- Floating task manager
+hl.window_rule({
+    name  = "float-gnome-system-monitor",
+    match = { class = "org.gnome.SystemMonitor" },
+
     float = true,
 })

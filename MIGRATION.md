@@ -20,19 +20,18 @@ i3Status -> waybar
 rofi -> hyprlauncher
 picom -> hyprland
 
-
 #TODO
 - [ ] bindsym $mod+Escape mode "$mode_system"
 - [ ] bindsym $mod+grave mode "$mode_custom"
 - [x] screenshot function
 - [ ] wallpaper
 - [ ] keybinding $mod+Return	kitty (hyprland only binds $mod+t)
-- [ ] $mod+Shift+t	gnome-terminal
-- [ ] $mod+f / $mod+Shift+f	firefox / private
+- [x] $mod+Shift+t	gnome-terminal
+- [x] $mod+f / $mod+Shift+f	firefox / private
 - [ ] $mod+c	VS Code
 - [ ] $mod+b	xdg-open about:blank
-- [ ] $mod+g / $mod+Shift+g	chrome / incognito
-- [ ] Ctrl+Shift+Escape	gnome-system-monitor
+- [x] $mod+g / $mod+Shift+g	chrome / incognito
+- [x] Ctrl+Shift+Escape	gnome-system-monitor
 - [ ] $mod+Shift+d	rofi run (drun is covered by mainMod+D→hyprlauncher)
 
 Missing: Window-management bindings
