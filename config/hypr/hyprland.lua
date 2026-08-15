@@ -32,6 +32,7 @@ local terminal          = "kitty"
 local terminalAlt   = "gnome-terminal"
 local fileManager       = "nemo"
 local menu              = "hyprlauncher"
+local bin               = "/home/xlwp/Projects/personal/desktop-config/bin"
 
 
 -------------------
@@ -43,9 +44,10 @@ local menu              = "hyprlauncher"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function ()
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("waybar")
+  hl.exec_cmd(bin .. "/set-wallpaper-hypr.sh random")
 end)
 
 
@@ -123,8 +125,8 @@ hl.config({
 
         shadow = {
             enabled      = true,
-            range        = 8,
-            render_power = 3,
+            range        = 4,
+            render_power = 4,
             color        = palette.shadow,
         },
 
@@ -331,6 +333,10 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 hl.bind("Print",               hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh full"))
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh window"))
 hl.bind("SHIFT + Print",       hl.dsp.exec_cmd("/home/xlwp/Projects/personal/desktop-config/bin/screenshot.sh select"))
+
+-- Wallpaper
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(bin .. "/set-wallpaper-hypr.sh random"))
+hl.bind(mainMod .. " + CTRL + W",   hl.dsp.exec_cmd(bin .. "/set-wallpaper-hypr.sh browse"))
 
 -- Groups (tabbed layout for selected windows)
 hl.bind(mainMod .. " + Z",        hl.dsp.group.toggle("")) -- toggle group membership

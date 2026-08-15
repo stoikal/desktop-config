@@ -14,8 +14,12 @@ config/
   rofi/themes/                # Rofi themes
   kitty/kitty.conf            # Kitty terminal config
   ranger/rc.conf              # Ranger file manager config
+  hypr/hyprland.lua           # Hyprland window manager config (Lua DSL)
+  waybar/config.jsonc         # Waybar status bar config
+  waybar/style.css            # Waybar styling
 bin/
-  set-wallpaper.sh            # Wallpaper setter (feh)
+  set-wallpaper.sh            # Wallpaper setter for i3 (feh)
+  set-wallpaper-hypr.sh       # Wallpaper setter for Hyprland (swaybg + wofi)
   screenshot.sh               # Screenshot tool (maim, xdotool, xclip)
   caffeine.sh                 # Caffeine toggle (xset, xdg-screensaver)
 scripts/
@@ -46,7 +50,8 @@ setup/
 - System mode: `$mod+BackSpace` or `$mod+Escape`
 - Resize mode: `$mod+r`
 - Screenshot: `Print` (full), `$mod+Print` (window), `Shift+Print` (select)
-- Wallpaper: `$mod+Shift+w` (random), `$mod+Ctrl+w` (browse)
+- Wallpaper (i3): `$mod+Shift+w` (random, feh), `$mod+Ctrl+w` (browse via rofi)
+- Wallpaper (Hyprland): `$mod+Shift+w` (random, swaybg), `$mod+Ctrl+w` (browse via wofi)
 - Reload config: `$mod+Shift+c`
 - Exit: `$mod+Shift+x` (i3-nagbar)
 

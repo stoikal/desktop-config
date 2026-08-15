@@ -8,6 +8,8 @@
 - hyprlauncher
 - grim // for screenshot
 - wl-copy
+- wofi
+- swaybg
 
 # removed packages
 
@@ -19,12 +21,13 @@ i3 -> hyprland
 i3Status -> waybar
 rofi -> hyprlauncher
 picom -> hyprland
+feh -> swaybg (hyprpaper tried first — broken on Renoir/Mesa 25, see bin/set-wallpaper-hypr.sh)
 
 #TODO
 - [ ] bindsym $mod+Escape mode "$mode_system"
 - [ ] bindsym $mod+grave mode "$mode_custom"
 - [x] screenshot function
-- [ ] wallpaper
+- [x] wallpaper
 - [ ] keybinding $mod+Return	kitty (hyprland only binds $mod+t)
 - [x] $mod+Shift+t	gnome-terminal
 - [x] $mod+f / $mod+Shift+f	firefox / private
@@ -56,3 +59,8 @@ Missing: X11-only scripts needing Wayland rewrites
 - set-wallpaper.sh (feh) → needs hyprpaper/swww; $mod+Shift+w/$mod+Ctrl+w unbound
 - caffeine.sh (xset) → needs different approach; $mod+Shift+z unbound
 - ws1-comm.sh / ws-saktimart.sh → not wired (they launch Firefox with site URLs)
+
+# Replacements implemented
+- set-wallpaper.sh → bin/set-wallpaper-hypr.sh (swaybg + wofi)
+- $mod+Shift+w → bin/set-wallpaper-hypr.sh random
+- $mod+Ctrl+w → bin/set-wallpaper-hypr.sh browse
