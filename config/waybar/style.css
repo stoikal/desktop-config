@@ -6,7 +6,7 @@
 
 window#waybar {
     background-color: #170e23;
-    border-bottom: 2px solid rgba(51, 204, 255, 0.25);
+    /* border-bottom: 2px solid rgba(51, 204, 255, 0.25); */
     color: #f8f8f2;
     transition-property: background-color;
     transition-duration: .5s;
