@@ -333,6 +333,10 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
+-- Switch to previous/next existing workspace with mainMod + Ctrl + arrow keys
+hl.bind(mainMod .. " + CTRL + left",  hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + CTRL + right", hl.dsp.focus({ workspace = "e+1" }))
+
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
