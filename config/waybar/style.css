@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: 'Fira Code', FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Cascadia Code', FontAwesome, monospace;
     font-size: 13px;
 }
 

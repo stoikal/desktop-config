@@ -5,7 +5,7 @@
 
 window {
     background-color: transparent;
-    font-family: "JetBrains Mono";
+    font-family: 'Hack', 'JetBrains Mono';
 }
 
 #outer-box {
@@ -33,7 +33,7 @@ window {
 }
 
 #entry {
-    padding: 2px 6px;
+    padding: 4px 6px;
     color: #b9bba3;
 }
 
