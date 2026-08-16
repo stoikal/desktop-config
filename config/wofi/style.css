@@ -5,7 +5,7 @@
 
 window {
     background-color: transparent;
-    font-family: 'Hack', 'JetBrains Mono';
+    font-family: 'Inconsolata', 'JetBrains Mono';
 }
 
 #outer-box {
@@ -20,7 +20,7 @@ window {
     background-color: #160021;
     color: #dbdfbc;
     padding: 1px 8px;
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 6px;
 }   
 
@@ -38,7 +38,7 @@ window {
 }
 
 #text {
-    font-size: 16px;
+    font-size: 18px;
     background-color: transparent;
 }
 
