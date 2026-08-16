@@ -50,6 +50,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("blueman-applet")
   hl.exec_cmd("waybar")
   hl.exec_cmd(bin .. "/set-wallpaper-hypr.sh random")
+  hl.exec_cmd("waybar -c ~/.config/waybar/quote.config.jsonc -s ~/.config/waybar/quote.style.css")
 end)
 
 
@@ -218,7 +219,8 @@ hl.config({
 
 hl.config({
     misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_splash_rendering = true,
+        force_default_wallpaper = 0,    -- Set to 0 or 1 to disable the anime mascot wallpapers
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
@@ -433,6 +435,14 @@ hl.window_rule({
 hl.window_rule({
     name  = "float-gnome-system-monitor",
     match = { class = "org.gnome.SystemMonitor" },
+
+    float = true,
+})
+
+-- Floating terminal
+hl.window_rule({
+    name  = "float-gnome-terminal",
+    match = { class = "^(org\\.gnome\\.Terminal|Gnome-terminal)$" },
 
     float = true,
 })

@@ -1,0 +1,14 @@
+* {
+    font-family: 'Cascadia Code', FontAwesome, monospace;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #777777;
+}
+
+#custom-quote {
+    color: #777777;
+    padding: 0 16px;
+}

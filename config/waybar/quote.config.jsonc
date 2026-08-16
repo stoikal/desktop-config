@@ -1,0 +1,19 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "bottom", // Waybar layer (top|bottom|overlay)
+    "exclusive": false,
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (px)
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": [],
+    "modules-center": [
+        "custom/quote"
+    ],
+    "modules-right": [],
+    "custom/quote": {
+        "format": "{}",
+        "exec": "/home/xlwp/Projects/personal/desktop-config/bin/quote.sh",
+        "interval": 300,
+        "tooltip": false
+    }
+}

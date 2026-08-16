@@ -23,6 +23,7 @@ bin/
   set-wallpaper-hypr.sh       # Wallpaper setter for Hyprland (swaybg + wofi)
   screenshot.sh               # Screenshot tool (maim, xdotool, xclip)
   caffeine.sh                 # Caffeine toggle (xset, xdg-screensaver)
+  quote.sh                    # Prints a single-line fortune (for the Waybar quote bar)
 scripts/
   ws1-comm.sh                 # Opens Firefox with WhatsApp on workspace 1
   ws-saktimart.sh             # Opens saktimart project workspace

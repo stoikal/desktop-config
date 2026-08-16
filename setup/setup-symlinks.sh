@@ -128,6 +128,16 @@ create_symlink \
     "$HOME/.config/waybar/style.css" \
     "Waybar style"
 
+create_symlink \
+    "$CONFIG_ROOT/config/waybar/quote.config.jsonc" \
+    "$HOME/.config/waybar/quote.config.jsonc" \
+    "Waybar quote configuration"
+
+create_symlink \
+    "$CONFIG_ROOT/config/waybar/quote.style.css" \
+    "$HOME/.config/waybar/quote.style.css" \
+    "Waybar quote style"
+
 # Wofi launcher style (mirrors config/rofi/themes/DarkBlueFork.rasi)
 create_symlink \
     "$CONFIG_ROOT/config/wofi/style.css" \
@@ -144,6 +154,7 @@ echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
 echo -e "${GREEN}✓ Hyprland configuration symlinked${NC}"
 echo -e "${GREEN}✓ Waybar configuration symlinked${NC}"
+echo -e "${GREEN}✓ Waybar quote configuration symlinked${NC}"
 echo -e "${GREEN}✓ Wofi style symlinked${NC}"
 echo
 echo -e "${YELLOW}Next steps:${NC}"
