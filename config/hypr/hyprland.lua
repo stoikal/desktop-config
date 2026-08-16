@@ -47,7 +47,7 @@ local bin               = "/home/xlwp/Projects/personal/desktop-config/bin"
 --
 hl.on("hyprland.start", function ()
   hl.exec_cmd("nm-applet")
-  hl.exec_cmd("blueman-applet")
+--   hl.exec_cmd("blueman-applet")
   hl.exec_cmd("waybar")
   hl.exec_cmd(bin .. "/set-wallpaper-hypr.sh random")
   hl.exec_cmd("waybar -c ~/.config/waybar/quote.config.jsonc -s ~/.config/waybar/quote.style.css")
@@ -224,7 +224,6 @@ hl.config({
         disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
     },
 })
-
 
 ---------------
 ---- INPUT ----
