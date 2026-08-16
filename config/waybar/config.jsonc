@@ -2,7 +2,7 @@
 {
     "layer": "top", // Waybar layer (top|bottom|overlay)
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (px)
+    "height": 28, // Waybar height (px)
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
@@ -217,8 +217,8 @@
 		"menu": "on-click",
 		"menu-file": "/usr/share/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
+			"shutdown": "systemctl poweroff",
+			"reboot": "systemctl reboot",
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}

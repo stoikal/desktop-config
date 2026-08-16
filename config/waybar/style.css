@@ -45,7 +45,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #33ccff;
+    box-shadow: inset 0 -3px #00F5EA;
 }
 
 /* you can set a style on hover for any module like this */
@@ -66,19 +66,19 @@ button:hover {
 
 #workspaces button.active,
 #workspaces button.focused {
-    color: #33ccff;
-    box-shadow: inset 0 -3px #33ccff;
+    color: #00F5EA;
+    box-shadow: inset 0 -3px #00F5EA;
 }
 
 #workspaces button.urgent {
-    background-color: #ff5555;
+    background-color: #FF0062;
     color: #170e23;
 }
 
 #mode {
-    background-color: #33ccff;
+    background-color: #00F5EA;
     color: #170e23;
-    box-shadow: inset 0 -3px #33ccff;
+    box-shadow: inset 0 -3px #00F5EA;
 }
 
 #clock,
@@ -123,15 +123,15 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
-    color: #00ff99;
+    color: #00F5EA;
 }
 
 #battery.warning:not(.charging) {
-    color: #f1fa8c;
+    color: #E5FF00;
 }
 
 #battery.critical:not(.charging) {
-    color: #ff5555;
+    color: #FF0062;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -146,7 +146,7 @@ button:hover {
 @keyframes blink {
     to {
         color: #170e23;
-        background-color: #ff5555;
+        background-color: #FF0062;
     }
 }
 
@@ -155,11 +155,11 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    color: #ff5555;
+    color: #FF0062;
 }
 
 #power-profiles-daemon.balanced {
-    color: #33ccff;
+    color: #00F5EA;
 }
 
 #power-profiles-daemon.power-saver {
@@ -179,7 +179,7 @@ label:focus {
 }
 
 #network.disconnected {
-    color: #ff5555;
+    color: #FF0062;
 }
 
 #pulseaudio {
@@ -208,7 +208,7 @@ label:focus {
 }
 
 #custom-media.custom-vlc {
-    color: #f1fa8c;
+    color: #E5FF00;
 }
 
 #temperature {
@@ -216,7 +216,7 @@ label:focus {
 }
 
 #temperature.critical {
-    color: #ff5555;
+    color: #FF0062;
 }
 
 #tray {
@@ -229,7 +229,7 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #ff5555;
+    background-color: #FF0062;
     color: #170e23;
 }
 
@@ -238,7 +238,7 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-    color: #33ccff;
+    color: #00F5EA;
 }
 
 #mpd {
@@ -246,7 +246,7 @@ label:focus {
 }
 
 #mpd.disconnected {
-    color: #ff5555;
+    color: #FF0062;
 }
 
 #mpd.stopped {
@@ -254,11 +254,11 @@ label:focus {
 }
 
 #mpd.paused {
-    color: #f1fa8c;
+    color: #E5FF00;
 }
 
 #language {
-    color: #33ccff;
+    color: #00F5EA;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
@@ -277,7 +277,7 @@ label:focus {
 
 #keyboard-state > label.locked {
     background: rgba(51, 204, 255, 0.15);
-    color: #33ccff;
+    color: #00F5EA;
 }
 
 #scratchpad {
@@ -298,7 +298,7 @@ label:focus {
 }
 
 #privacy-item.screenshare {
-    background-color: #f1fa8c;
+    background-color: #E5FF00;
     color: #170e23;
 }
 
@@ -308,6 +308,6 @@ label:focus {
 }
 
 #privacy-item.audio-out {
-    background-color: #33ccff;
+    background-color: #00F5EA;
     color: #170e23;
 }
