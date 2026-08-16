@@ -244,6 +244,25 @@ hl.config({
             natural_scroll = true,
         },
     },
+    group = {
+        groupbar = {
+            enabled = true,
+            font_size = 12,
+            height = 18,
+            indicator_gap = 0,
+            indicator_height = 0,
+            gradients = true,
+            text_color = "rgba(222222cc)",
+            text_color_inactive = "rgba(ffffffcc)",
+            col = {
+                active          = { colors = { palette.cyan, palette.green }, angle = 45 },
+                inactive        = "rgba(222222cc)",
+                locked_active   = "rgba(ffff00cc)",
+                locked_inactive = "rgba(222222cc)",
+            },
+
+        }
+    }
 })
 
 hl.gesture({

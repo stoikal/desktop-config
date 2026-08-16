@@ -33,12 +33,12 @@ window {
 }
 
 #entry {
-    padding: 4px 6px;
+    padding: 2px 6px;
+    color: #b9bba3;
 }
 
 #text {
     font-size: 16px;
-    color: #dbdfbc;
     background-color: transparent;
 }
 
