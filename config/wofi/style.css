@@ -5,7 +5,7 @@
 
 window {
     background-color: transparent;
-    font-family: 'Inconsolata', 'JetBrains Mono';
+    font-family: 'Cascadia Code', 'JetBrains Mono';
 }
 
 #outer-box {
@@ -38,7 +38,7 @@ window {
 }
 
 #text {
-    font-size: 18px;
+    font-size: 16px;
     background-color: transparent;
 }
 
