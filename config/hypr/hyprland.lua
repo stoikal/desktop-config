@@ -105,7 +105,7 @@ hl.config({
         border_size = 1,
 
         col = {
-            active_border   = { colors = { palette.cyan, palette.green }, angle = 45 },
+            active_border   = { colors = { "#ffffff", palette.cyan }, angle = 45 },
             inactive_border = palette.muted,
         },
 
