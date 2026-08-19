@@ -360,9 +360,9 @@ hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 -- Screenshots
-hl.bind("Print",               hl.dsp.exec_cmd(bin .. "/screenshot.sh full"))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(bin .. "/screenshot.sh window"))
-hl.bind("SHIFT + Print",       hl.dsp.exec_cmd(bin .. "/screenshot.sh select"))
+hl.bind("Print",               hl.dsp.exec_cmd(bin .. "/screenshot-hypr.sh full"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(bin .. "/screenshot-hypr.sh window"))
+hl.bind("SHIFT + Print",       hl.dsp.exec_cmd(bin .. "/screenshot-hypr.sh select"))
 
 -- Wallpaper
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(bin .. "/set-wallpaper-hypr.sh random"))
