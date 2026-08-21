@@ -46,11 +46,11 @@ local bin               = "/home/xlwp/Projects/personal/desktop-config/bin"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("nm-applet")
+    hl.exec_cmd("nm-applet")
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("waybar -c ~/.config/waybar/quote.config.jsonc -s ~/.config/waybar/quote.style.css")
+    hl.exec_cmd(bin .. "/set-wallpaper-hypr.sh random")
 --   hl.exec_cmd("blueman-applet")
-  hl.exec_cmd("waybar")
-  hl.exec_cmd(bin .. "/set-wallpaper-hypr.sh random")
-  hl.exec_cmd("waybar -c ~/.config/waybar/quote.config.jsonc -s ~/.config/waybar/quote.style.css")
 end)
 
 
@@ -296,6 +296,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(terminal .. " -e ranger"))
 hl.bind(mainMod .. " + V", hl.dsp.window.fullscreen({ fullscreen = "toggle", mode = 0 }))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(menuRun))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())

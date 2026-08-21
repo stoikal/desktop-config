@@ -117,6 +117,12 @@ create_symlink \
     "$HOME/.config/hypr/hyprland.lua" \
     "Hyprland window manager configuration"
 
+# Hyprlock lock screen configuration
+create_symlink \
+    "$CONFIG_ROOT/config/hypr/hyprlock.conf" \
+    "$HOME/.config/hypr/hyprlock.conf" \
+    "Hyprlock lock screen configuration"
+
 # Waybar configuration
 create_symlink \
     "$CONFIG_ROOT/config/waybar/config.jsonc" \
@@ -153,6 +159,7 @@ echo -e "${GREEN}✓ Ranger configuration symlinked${NC}"
 echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
 echo -e "${GREEN}✓ Hyprland configuration symlinked${NC}"
+echo -e "${GREEN}✓ Hyprlock configuration symlinked${NC}"
 echo -e "${GREEN}✓ Waybar configuration symlinked${NC}"
 echo -e "${GREEN}✓ Waybar quote configuration symlinked${NC}"
 echo -e "${GREEN}✓ Wofi style symlinked${NC}"
