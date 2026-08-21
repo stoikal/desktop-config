@@ -74,12 +74,9 @@ bindsym --whole-window Ctrl+button3 floating toggle
 bindsym --border button2 kill
 bindsym --whole-window Ctrl+button2 kill
 
-# start gnome-terminal
-bindsym $mod+Shift+t exec gnome-terminal
-
-# start kitty
-bindsym $mod+Return exec kitty
+# start terminal
 bindsym $mod+t exec kitty
+bindsym $mod+Shift+t exec gnome-terminal
 
 # start firefox
 bindsym $mod+f exec firefox
@@ -359,11 +356,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 
 # Set window colors
-# class                 border  bground text    indicator child_border
-client.focused          #E5FF00 #E5FF00 #000000 #E5FF00   #2a2d4e
-client.unfocused        #1d2335 #1d2335 #6c7086 #1d2335   #1d2335
-client.focused_inactive #1d2335 #1d2335 #6c7086 #1d2335   #1d2335
-client.urgent           #eb4f4f #eb4f4f #e0e0e0 #eb4f4f   #eb4f4f
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# class                 border     bground  text    indicator     child_border
+client.focused          #E5FF00 #E5FF00 #000000 #E5FF00  #2a2d4e
+client.unfocused        #1d2335 #1d2335 #6c7086 #1d2335  #1d2335
+client.focused_inactive #1d2335 #1d2335 #6c7086 #1d2335  #1d2335
+client.urgent           #eb4f4f #eb4f4f #e0e0e0 #eb4f4f  #eb4f4f
+client.placeholder      #000000 #0c0c0c #ffffff #000000  #0c0c0c
 
 client.background       #0e101a
