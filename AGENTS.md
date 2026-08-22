@@ -4,6 +4,10 @@
 
 Linux desktop configuration files for the i3 window manager. Managed via symlinks from this repo to `~/.config/` paths.
 
+## Current Status
+
+Hyprland migration is **postponed** — i3 is the active window manager for now. Reason: some apps don't work under Hyprland (e.g. Postman). The Hyprland/Waybar/wofi config files remain in the repo for the future migration but are not a priority.
+
 ## Repository Structure
 
 ```
@@ -15,15 +19,20 @@ config/
   kitty/kitty.conf            # Kitty terminal config
   ranger/rc.conf              # Ranger file manager config
   hypr/hyprland.lua           # Hyprland window manager config (Lua DSL)
+  hypr/hyprlock.conf          # Hyprlock lock screen config (mirrors palette)
   waybar/config.jsonc         # Waybar status bar config
   waybar/style.css            # Waybar styling
+  waybar/quote.config.jsonc   # Waybar quote bar config (runs bin/quote.sh)
+  waybar/quote.style.css      # Waybar quote bar styling
   wofi/style.css              # Wofi launcher style (mirrors rofi DarkBlueFork)
 bin/
   set-wallpaper.sh            # Wallpaper setter for i3 (feh)
   set-wallpaper-hypr.sh       # Wallpaper setter for Hyprland (swaybg + wofi)
-  screenshot.sh               # Screenshot tool (maim, xdotool, xclip)
+  screenshot.sh               # Screenshot tool for i3 (maim, xdotool, xclip)
+  screenshot-hypr.sh          # Screenshot tool for Hyprland (grim, slurp, wl-copy)
   caffeine.sh                 # Caffeine toggle (xset, xdg-screensaver)
   quote.sh                    # Prints a single-line fortune (for the Waybar quote bar)
+  rename-workspace.sh         # Renames active workspace (Hyprland, hyprctl + wofi)
 scripts/
   ws1-comm.sh                 # Opens Firefox with WhatsApp on workspace 1
   ws-saktimart.sh             # Opens saktimart project workspace
@@ -46,15 +55,23 @@ setup/
 ## Key Bindings
 
 - Mod key: `Mod4` (Super/Windows)
-- Terminal: `$mod+Return` or `$mod+t` (kitty)
+- Terminal: `$mod+t` (kitty), `$mod+Shift+t` (gnome-terminal)
 - Launcher: `$mod+d` (drun), `$mod+Shift+d` (run) — rofi
+- Apps: `$mod+f` (firefox), `$mod+Shift+f` (firefox private), `$mod+c` (VS Code), `$mod+e` (nemo), `$mod+Shift+e` (ranger), `$mod+g` (chrome), `$mod+Shift+g` (chrome incognito), `Ctrl+Shift+Escape` (system monitor)
 - Workspace mode: `$mod+grave` (custom workspace launcher)
 - System mode: `$mod+BackSpace` or `$mod+Escape`
 - Resize mode: `$mod+r`
 - Screenshot: `Print` (full), `$mod+Print` (window), `Shift+Print` (select)
 - Wallpaper (i3): `$mod+Shift+w` (random, feh), `$mod+Ctrl+w` (browse via rofi)
 - Wallpaper (Hyprland): `$mod+Shift+w` (random, swaybg), `$mod+Ctrl+w` (browse via wofi)
+- Rename workspace (i3): `$mod+n` (i3-input)
 - Reload config: `$mod+Shift+c`
+- Restart i3: `$mod+Shift+r`
+- Kill focused window: `$mod+Shift+q`
+- Caffeine toggle: `$mod+Shift+z`
+- Restart picom: `$mod+Ctrl+p` (references `$bin/start-picom.sh` — NOTE: script missing from repo)
+- Audio: `XF86AudioRaiseVolume` / `XF86AudioLowerVolume` / `XF86AudioMute` / `XF86AudioMicMute`
+- Brightness: `XF86MonBrightnessUp` / `XF86MonBrightnessDown`
 - Exit: `$mod+Shift+x` (i3-nagbar)
 
 ## After Making Changes
