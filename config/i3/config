@@ -50,8 +50,8 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Button Mapping Enabled" 1 2
 
-# Set wallpaper using feh (change the path to your wallpaper)
-exec_always --no-startup-id $bin/set-wallpaper.sh random
+# Set wallpaper using feh (last saved wallpaper, change the path to your wallpaper)
+exec_always --no-startup-id $bin/set-wallpaper.sh persist
 
 # keyboards
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
@@ -331,6 +331,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Gnome-system-monitor"] floating enable
 for_window [class="Gnome-terminal"] floating enable
+for_window [class="Anki"] floating enable
 
 
 # Screenshots (with picom handling to prevent blur issues)

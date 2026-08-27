@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+STATE_FILE="$HOME/.cache/desktop-config/wallpaper-last"
 
 mkdir -p "$WALLPAPER_DIR"
 
@@ -8,10 +9,16 @@ kill_bg() {
     pkill feh 2>/dev/null
 }
 
+save_wallpaper() {
+    mkdir -p "$(dirname "$STATE_FILE")"
+    echo "$1" > "$STATE_FILE"
+}
+
 set_wallpaper() {
     if [ -f "$1" ]; then
         kill_bg
         feh --bg-fill "$1"
+        save_wallpaper "$1"
         echo "Wallpaper set to: $1"
     else
         echo "Error: Wallpaper file not found: $1"
@@ -20,14 +27,24 @@ set_wallpaper() {
 }
 
 set_random_wallpaper() {
-    if [ -z "$(ls -A "$WALLPAPER_DIR"/*.{jpg,jpeg,png,gif,bmp} 2>/dev/null)" ]; then
+    wallpapers=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) 2>/dev/null)
+
+    if [ -z "$wallpapers" ]; then
         echo "No wallpapers found in $WALLPAPER_DIR"
         exit 1
     fi
 
-    kill_bg
-    feh --bg-fill --randomize "$WALLPAPER_DIR"/*
+    selected=$(echo "$wallpapers" | shuf -n 1)
+    set_wallpaper "$selected"
     echo "Random wallpaper set from $WALLPAPER_DIR"
+}
+
+set_persistent_wallpaper() {
+    if [ -f "$STATE_FILE" ]; then
+        set_wallpaper "$(cat "$STATE_FILE")"
+    else
+        echo "No saved wallpaper found; use random or browse first"
+    fi
 }
 
 browse_wallpaper() {
@@ -58,10 +75,14 @@ case "$1" in
     "browse"|"b")
         browse_wallpaper
         ;;
+    "persist"|"last")
+        set_persistent_wallpaper
+        ;;
     "")
-        echo "Usage: $0 [random|browse|/path/to/wallpaper]"
+        echo "Usage: $0 [random|browse|persist|/path/to/wallpaper]"
         echo "  random  - Set a random wallpaper from $WALLPAPER_DIR"
         echo "  browse  - Browse wallpapers using rofi"
+        echo "  persist - Set the last saved wallpaper"
         echo "  /path   - Set specific wallpaper file"
         ;;
     *)
