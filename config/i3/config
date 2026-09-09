@@ -215,7 +215,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws0
 workspace_auto_back_and_forth no
 
 # assign apps to workspaces
-assign [class="Spotify" instance="spotify"] → $ws9
+assign [class="Spotify" instance="spotify"] → $ws0
 assign [class="DBeaver" instance="DBeaver"] → $ws8
 assign [class="protonvpn-app"] → $ws0
 assign [class="F5 VPN"] → $ws0
@@ -233,7 +233,7 @@ bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
 
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock-fancy, mode "default"
+    bindsym l exec --no-startup-id i3lock-fancy --pixelate, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id i3lock-fancy --nofork && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id i3lock-fancy --nofork && systemctl hibernate, mode "default"
