@@ -366,7 +366,7 @@ hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(bin .. "/screenshot-hypr.sh windo
 hl.bind("SHIFT + Print",       hl.dsp.exec_cmd(bin .. "/screenshot-hypr.sh select"))
 
 -- Wallpaper
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(bin .. "/set-wallpaper-hypr.sh random"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd(bin .. "/set-wallpaper-hypr.sh cycle"))
 hl.bind(mainMod .. " + CTRL + W",   hl.dsp.exec_cmd(bin .. "/set-wallpaper-hypr.sh browse"))
 
 -- Groups (tabbed layout for selected windows)

@@ -99,7 +99,7 @@ bindsym $mod+Shift+g exec google-chrome --incognito
 bindsym Ctrl+Shift+Escape exec gnome-system-monitor
 
 # change wallpaper randomly from wallpapers directory
-bindsym $mod+Shift+w exec --no-startup-id $bin/set-wallpaper.sh random
+bindsym $mod+Shift+w exec --no-startup-id $bin/set-wallpaper.sh cycle
 
 # browse and select wallpaper using rofi
 bindsym $mod+Ctrl+w exec --no-startup-id $bin/set-wallpaper.sh browse

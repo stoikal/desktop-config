@@ -39,6 +39,32 @@ set_random_wallpaper() {
     echo "Random wallpaper set from $WALLPAPER_DIR"
 }
 
+set_cycle_wallpaper() {
+    wallpapers=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.bmp" \) 2>/dev/null | sort)
+
+    if [ -z "$wallpapers" ]; then
+        echo "No wallpapers found in $WALLPAPER_DIR"
+        exit 1
+    fi
+
+    readarray -t list <<< "$wallpapers"
+    count=${#list[@]}
+
+    next=0
+    if [ -f "$STATE_FILE" ]; then
+        last=$(cat "$STATE_FILE")
+        for (( i=0; i<count; i++ )); do
+            if [ "$last" == "${list[$i]}" ]; then
+                next=$(( (i + 1) % count ))
+                break
+            fi
+        done
+    fi
+
+    set_wallpaper "${list[$next]}"
+    echo "Cycled wallpaper to: ${list[$next]}"
+}
+
 set_persistent_wallpaper() {
     if [ -f "$STATE_FILE" ]; then
         set_wallpaper "$(cat "$STATE_FILE")"
@@ -72,6 +98,9 @@ case "$1" in
     "random"|"r")
         set_random_wallpaper
         ;;
+    "cycle"|"c")
+        set_cycle_wallpaper
+        ;;
     "browse"|"b")
         browse_wallpaper
         ;;
@@ -79,8 +108,9 @@ case "$1" in
         set_persistent_wallpaper
         ;;
     "")
-        echo "Usage: $0 [random|browse|persist|/path/to/wallpaper]"
+        echo "Usage: $0 [random|cycle|browse|persist|/path/to/wallpaper]"
         echo "  random  - Set a random wallpaper from $WALLPAPER_DIR"
+        echo "  cycle   - Set the next wallpaper (cyclic)"
         echo "  browse  - Browse wallpapers using rofi"
         echo "  persist - Set the last saved wallpaper"
         echo "  /path   - Set specific wallpaper file"

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+STATE_FILE="$HOME/.cache/desktop-config/wallpaper-last"
 
 mkdir -p "$WALLPAPER_DIR"
 
@@ -27,6 +28,9 @@ set_wallpaper() {
     nohup swaybg -i "$1" -m fill >/tmp/swaybg.log 2>&1 &
     disown
 
+    mkdir -p "$(dirname "$STATE_FILE")"
+    echo "$1" > "$STATE_FILE"
+
     notify "Set: $(basename "$1")"
 }
 
@@ -46,6 +50,29 @@ set_random_wallpaper() {
     fi
 
     set_wallpaper "${wallpapers[RANDOM % ${#wallpapers[@]}]}"
+}
+
+set_cycle_wallpaper() {
+    local -a wallpapers
+    mapfile -t wallpapers < <(list_wallpapers | sort)
+
+    if [ ${#wallpapers[@]} -eq 0 ]; then
+        notify "No wallpapers in $WALLPAPER_DIR"
+        exit 1
+    fi
+
+    local next=0 last i
+    if [ -f "$STATE_FILE" ]; then
+        last=$(cat "$STATE_FILE")
+        for i in "${!wallpapers[@]}"; do
+            if [ "$last" == "${wallpapers[$i]}" ]; then
+                next=$(( (i + 1) % ${#wallpapers[@]} ))
+                break
+            fi
+        done
+    fi
+
+    set_wallpaper "${wallpapers[$next]}"
 }
 
 browse_wallpaper() {
@@ -75,11 +102,14 @@ case "$1" in
     random|r)
         set_random_wallpaper
         ;;
+    cycle|c)
+        set_cycle_wallpaper
+        ;;
     browse|b)
         browse_wallpaper
         ;;
     "")
-        echo "Usage: $0 [random|browse|/path/to/wallpaper]"
+        echo "Usage: $0 [random|cycle|browse|/path/to/wallpaper]"
         exit 1
         ;;
     *)

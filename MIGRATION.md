@@ -63,5 +63,5 @@ Missing: X11-only scripts needing Wayland rewrites
 
 # Replacements implemented
 - set-wallpaper.sh → bin/set-wallpaper-hypr.sh (swaybg + wofi)
-- $mod+Shift+w → bin/set-wallpaper-hypr.sh random
+- $mod+Shift+w → bin/set-wallpaper-hypr.sh cycle
 - $mod+Ctrl+w → bin/set-wallpaper-hypr.sh browse

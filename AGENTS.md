@@ -62,8 +62,8 @@ setup/
 - System mode: `$mod+BackSpace` or `$mod+Escape`
 - Resize mode: `$mod+r`
 - Screenshot: `Print` (full), `$mod+Print` (window), `Shift+Print` (select)
-- Wallpaper (i3): `$mod+Shift+w` (random, feh), `$mod+Ctrl+w` (browse via rofi)
-- Wallpaper (Hyprland): `$mod+Shift+w` (random, swaybg), `$mod+Ctrl+w` (browse via wofi)
+- Wallpaper (i3): `$mod+Shift+w` (cycle, feh), `$mod+Ctrl+w` (browse via rofi)
+- Wallpaper (Hyprland): `$mod+Shift+w` (cycle, swaybg), `$mod+Ctrl+w` (browse via wofi)
 - Rename workspace (i3): `$mod+n` (i3-input)
 - Reload config: `$mod+Shift+c`
 - Restart i3: `$mod+Shift+r`
