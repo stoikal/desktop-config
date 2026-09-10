@@ -56,6 +56,9 @@ exec_always --no-startup-id $bin/set-wallpaper.sh persist
 # keyboards
 exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 
+# Launch pomo (top-right) and btm (bottom-right) monitors in floating terminals
+exec --no-startup-id $bin/start-monitors.sh
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
