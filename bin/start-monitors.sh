@@ -1,6 +1,8 @@
 #!/bin/bash
 # Launch pomo (top-right) and btm (bottom-right) in floating gnome-terminals on workspace 0
 
+export PATH="$HOME/go/bin:$HOME/.cargo/bin:$PATH"
+
 i3-msg workspace number 0
 sleep 0.5
 
