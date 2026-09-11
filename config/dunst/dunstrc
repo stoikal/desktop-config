@@ -62,7 +62,7 @@
     mouse_right_click = close_all
     close = ctrl+space
     close_all = ctrl+shift+space
-    history = ctrl+grave
+#    history = ctrl+grave
     context = ctrl+shift+period
 
 [experimental]
