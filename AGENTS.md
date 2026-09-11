@@ -18,6 +18,7 @@ config/
   rofi/themes/                # Rofi themes
   kitty/kitty.conf            # Kitty terminal config
   ranger/rc.conf              # Ranger file manager config
+  dunst/dunstrc               # Dunst notification daemon config (mirrors palette)
   hypr/hyprland.lua           # Hyprland window manager config (Lua DSL)
   hypr/hyprlock.conf          # Hyprlock lock screen config (mirrors palette)
   waybar/config.jsonc         # Waybar status bar config

@@ -109,6 +109,12 @@ create_symlink \
     "$HOME/.config/rofi" \
     "Rofi launcher configuration"
 
+# Dunst notification daemon configuration
+create_symlink \
+    "$CONFIG_ROOT/config/dunst/dunstrc" \
+    "$HOME/.config/dunst/dunstrc" \
+    "Dunst notification daemon configuration"
+
 ########## HYPRLAND ##########
 
 # Hyprland window manager configuration
@@ -158,6 +164,7 @@ echo -e "${GREEN}✓ Picom configuration symlinked${NC}"
 echo -e "${GREEN}✓ Ranger configuration symlinked${NC}"
 echo -e "${GREEN}✓ Kitty configuration symlinked${NC}"
 echo -e "${GREEN}✓ Rofi configuration symlinked${NC}"
+echo -e "${GREEN}✓ Dunst configuration symlinked${NC}"
 echo -e "${GREEN}✓ Hyprland configuration symlinked${NC}"
 echo -e "${GREEN}✓ Hyprlock configuration symlinked${NC}"
 echo -e "${GREEN}✓ Waybar configuration symlinked${NC}"
