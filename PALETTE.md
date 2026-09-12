@@ -46,3 +46,9 @@ Source: [pawelborkar/vscode-jellyfish](https://github.com/pawelborkar/vscode-jel
 | Gold | #ffd900 |
 | Green | #20dd20 |
 | Turquoise | #00ebb8 |
+
+## 
+| Color | Hex |
+|---|---|
+| Red | #5c001c |
+| Dark red | #330023 |
