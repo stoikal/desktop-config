@@ -1,0 +1,30 @@
+# GitNexus alias
+alias gn='gitnexus'
+
+# cd alias
+alias becuk='cd ~/Projects/becuk'
+alias cukai='cd ~/Projects/becuk/cukai-group && opencode'
+
+# cargo
+alias tetro=tetro-tui
+
+# aichat - is cargo app
+alias chat='aichat'
+alias chatfree='aichat -m openrouter:openrouter/free'
+alias ez='aichat -e'
+
+
+# vs code
+alias co='code . && exit'
+
+# Spotify
+alias spot=spotify_player
+
+# config
+alias config='cd /home/xlwp/Projects/personal/desktop-config && code . && exit'
+
+# IntelliJ IDEA launcher
+lij() {
+    nohup /usr/local/bin/idea "${@:-$(pwd)}" > /dev/null 2>&1 &
+    exit
+}

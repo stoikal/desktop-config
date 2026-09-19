@@ -156,6 +156,12 @@ create_symlink \
     "$HOME/.config/wofi/style.css" \
     "Wofi launcher style"
 
+# Bash aliases
+create_symlink \
+    "$CONFIG_ROOT/config/bash_aliases" \
+    "$HOME/.bash_aliases" \
+    "Bash aliases"
+
 
 echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"
