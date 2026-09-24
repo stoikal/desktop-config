@@ -26,6 +26,7 @@ config/
   waybar/quote.config.jsonc   # Waybar quote bar config (runs bin/quote.sh)
   waybar/quote.style.css      # Waybar quote bar styling
   wofi/style.css              # Wofi launcher style (mirrors rofi DarkBlueFork)
+  systemd-user/kafka.service  # Apache Kafka systemd user service
 bin/
   set-wallpaper.sh            # Wallpaper setter for i3 (feh)
   set-wallpaper-hypr.sh       # Wallpaper setter for Hyprland (swaybg + wofi)

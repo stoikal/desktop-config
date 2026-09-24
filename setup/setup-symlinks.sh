@@ -162,6 +162,12 @@ create_symlink \
     "$HOME/.bash_aliases" \
     "Bash aliases"
 
+# Kafka systemd user service
+create_symlink \
+    "$CONFIG_ROOT/config/systemd-user/kafka.service" \
+    "$HOME/.config/systemd/user/kafka.service" \
+    "Kafka systemd user service"
+
 
 echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"
