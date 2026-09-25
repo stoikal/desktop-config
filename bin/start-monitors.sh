@@ -16,7 +16,7 @@ POMO_Y=60
 BTM_Y=$(( SCREEN_H - WIN_H - MARGIN ))
 RIGHT_X=$(( SCREEN_W - WIN_W - MARGIN_X ))
 
-gnome-terminal --role "pomo" --title "pomo" -- bash -c pomo &
+gnome-terminal --role "pomo" --title "pomo" &
 gnome-terminal --role "btm" --title "btm" -- bash -c btm &
 
 sleep 3
