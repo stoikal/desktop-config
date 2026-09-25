@@ -71,11 +71,11 @@ floating_modifier $mod
 
 # Right click on title bar to toggle floating mode
 bindsym --border button3 floating toggle
-bindsym --whole-window Ctrl+button3 floating toggle
+bindsym --whole-window $mod+Shift+button3 floating toggle
 
 # Middle click on title bar to close window
 bindsym --border button2 kill
-bindsym --whole-window Ctrl+button2 kill
+bindsym --whole-window $mod+Shift+button2 kill
 
 # start terminal
 bindsym $mod+t exec kitty
