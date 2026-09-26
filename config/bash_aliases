@@ -4,6 +4,7 @@ alias gn='gitnexus'
 # cd alias
 alias becuk='cd ~/Projects/becuk'
 alias cukai='cd ~/Projects/becuk/cukai-group && opencode'
+alias tiket='cd ~/Projects/becuk/tiket-jira-bugs26 && co . && exit'
 
 # cargo
 alias tetro=tetro-tui
