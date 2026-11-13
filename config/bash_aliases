@@ -3,8 +3,7 @@ alias gn='gitnexus'
 
 # cd alias
 alias becuk='cd ~/Projects/becuk'
-alias cukai='cd ~/Projects/becuk/cukai-group && opencode'
-alias tiket='cd ~/Projects/becuk/tiket-jira-bugs26 && co . && exit'
+alias cukai='cd ~/Projects/becuk/cukai-group'
 
 # cargo
 alias tetro=tetro-tui
@@ -17,6 +16,7 @@ alias ez='aichat -e'
 
 # vs code
 alias co='code . && exit'
+alias cuk='cd ~/Projects/becuk/cukai-group && co'
 
 # Spotify
 alias spot=spotify_player
@@ -29,3 +29,7 @@ lij() {
     nohup /usr/local/bin/idea "${@:-$(pwd)}" > /dev/null 2>&1 &
     exit
 }
+
+
+# ssh
+alias luna='ssh luna@luna -p 2222'
