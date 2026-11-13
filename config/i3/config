@@ -58,6 +58,8 @@ exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl
 
 # Launch pomo (top-right) and btm (bottom-right) monitors in floating terminals
 exec --no-startup-id $bin/start-monitors.sh
+# Re-apply ~/.screenlayout/top-btm.sh whenever HDMI-A-0 is plugged in (hotplug watcher)
+exec_always --no-startup-id $bin/monitor-hotplug.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
