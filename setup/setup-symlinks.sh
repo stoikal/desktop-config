@@ -168,6 +168,12 @@ create_symlink \
     "$HOME/.config/systemd/user/kafka.service" \
     "Kafka systemd user service"
 
+# Nemo context-menu action: set image as wallpaper
+create_symlink \
+    "$CONFIG_ROOT/config/nemo/actions/set-wallpaper.nemo_action" \
+    "$HOME/.local/share/nemo/actions/set-wallpaper.nemo_action" \
+    "Nemo 'Set as Wallpaper' action"
+
 
 echo -e "${BLUE}=== Setup Summary ===${NC}"
 echo -e "${GREEN}✓ i3 configuration symlinked${NC}"

@@ -1,0 +1,9 @@
+[Nemo Action]
+Name=Set as Wallpaper
+Comment=Set the selected image as the desktop wallpaper
+Exec=/home/xlwp/Projects/personal/desktop-config/bin/set-wallpaper.sh %F
+Icon-Name=preferences-desktop-wallpaper
+Selection=s
+Extensions=jpg;jpeg;png;gif;bmp;webp;
+Mimetypes=image/jpeg;image/png;image/gif;image/bmp;image/webp;
+Quote=double
